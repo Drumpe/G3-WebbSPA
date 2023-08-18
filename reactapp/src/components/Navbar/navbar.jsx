@@ -29,7 +29,6 @@ function Navbar() {
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
 
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="?topic=&sortBy=">All</a>
                                 <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("")}>All</a></dt>
                                 <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("Halsa")}>Hälsa</a></dt>
                                 <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("SamhalleKonflikter")}>Samhälle och konflikt</a></dt>
