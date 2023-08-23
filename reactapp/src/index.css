@@ -29,6 +29,16 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
+    text-align: left;
+    display: inline-block;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1232px;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.content {
+    
 }
 
 h1 {
@@ -69,5 +79,10 @@ button {
 
     button {
         background-color: #f9f9f9;
+    }
+
+    tablePlease {
+        background-color: aqua
+
     }
 }

@@ -1,7 +1,13 @@
 import React from 'react';
 import './weatherbox.css';
+import '/wwwroot/css/site.css';
+import './TheWeather.jsx';
+//import '/bootstrap-4.0.0-dist/css/bootstrap-grid.css';
+//import './TheWeather.js';
 
 function WeatherCard() {
+    
+
     return (
         <div className="card weather-card">
             <div className="weather-search">
@@ -39,5 +45,6 @@ function WeatherCard() {
         </div>
     );
 }
+
 
 export default WeatherCard;

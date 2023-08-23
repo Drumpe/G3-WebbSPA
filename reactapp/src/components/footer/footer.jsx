@@ -1,4 +1,7 @@
 import React from 'react';
+import '/wwwroot/css/footerstyle.css';
+
+
 
 function Footer() {
 
@@ -49,16 +52,16 @@ function Footer() {
 
                                 <div className="input-group mb-3">
                                     <div>&ensp; &ensp;</div>
-                                    <div>
-                                        how to do this with events??
+                                    {/*<div>*/}
+                                        
 
-                                        {/*        <input id="emailInput" type="email" className="form-control" placeholder="Sign up with your email" aria-label="Recipient's email">*/}
-                                        {/*    </div>*/}
-                                        {/*    <button id="submitButton" className="btn btn-primary">Sign me UP!</button>*/}
-                                        {/*</div>*/}
-                                        {/*<div className="modal-footer">*/}
-                                        {/*    <div id="thankYouMessage" style="display: none;">Thank you for signing up!</div>*/}
-                                        {/*    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>*/}
+                                    {/*<input id="emailInput" type="email" className="form-control" placeholder="Sign up with your email" aria-label="Recipient's email">*/}
+                                    {/*   </div>*/}
+                                    {/*        <button id="submitButton" className="btn btn-primary">Sign me UP!</button>*/}
+                                    {/*    </div>*/}
+                                    {/*    <div className="modal-footer">*/}
+                                    {/*        <div id="thankYouMessage" style="display: none;">Thank you for signing up!</div>*/}
+                                    {/*        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>*/}
                                     </div>
                                 </div>
                             </div>
@@ -113,14 +116,14 @@ function Footer() {
 
                     <p>&#169; 2023 Grupp3 WebbNews Mjaumjau. All rights reserved.</p>
                 </div>
-                {/*<script src="~/lib/jquery/dist/jquery.min.js"></script>*/}
-                {/*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*/}
-                {/*<script src="~/js/site.js" asp-append-version="true"></script>*/}
-                {/*@await RenderSectionAsync("Scripts", required: false)*/}
+                //{/*<script src="~/lib/jquery/dist/jquery.min.js"></script>*/}
+                //{/*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*/}
+                //{/*<script src="~/js/site.js" asp-append-version="true"></script>*/}
+                //{/*@await RenderSectionAsync("Scripts", required: false)*/}
 
 
 
-            </div>
+            
             );
 }
 

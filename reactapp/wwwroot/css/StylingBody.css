@@ -5,6 +5,8 @@
 }
 body {
     margin: 0;
+    margin-top: 50px;
+    margin-bottom: 50px;
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
@@ -69,4 +71,8 @@ body {
 
 .card-topic {
     color: rgb(124, 172, 204);
+}
+
+.table {
+    margin-bottom: 50px;
 }
