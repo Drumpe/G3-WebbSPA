@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
 import plugin from '@vitejs/plugin-react';
 import fs from 'fs';
@@ -36,6 +35,14 @@ export default defineConfig({
                 secure: false
             },
             '^/home': {  // <-- Added this route
+                target: 'https://localhost:7242/',
+                secure: false
+            },
+            '^/authenticate/login': {  // <-- Added this route
+                target: 'https://localhost:7242/',
+                secure: false
+            },
+            '^/authenticate/register': {  // <-- Added this route
                 target: 'https://localhost:7242/',
                 secure: false
             }

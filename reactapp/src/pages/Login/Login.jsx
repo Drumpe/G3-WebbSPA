@@ -12,16 +12,29 @@ const Login = () => {
     const navigate = useNavigate();
     const [, setCookie] = useCookies(['session']);
 
-    const handleLogin = () => {
-        
-        if (username == "bobby" && password == "") {
-            setCookie('session', 'test', { path: '/' });
-            localStorage.setItem("token", "data.token")
-            navigate('/articles');
-        } else {
-            alert('Wrong credentials.');
-        }
-    };
+    
+
+        const handleLogin = async () => {
+            const body = {
+                "username": username, "password": password
+            }
+            const response = await fetch(`/authenticate/login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(body)
+            });
+            const data = await response.json();
+            if (response.status === 200) {
+                setCookie('session', 'test', { path: '/' });
+                localStorage.setItem("token", data.token)
+                navigate('/articles');
+            } else {
+                alert('Wrong credentials.');
+            }
+        };
+
 
     // TODO: add styles
     return (
