@@ -17,9 +17,7 @@
     <None Remove="src\NewFolder\**" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\components\ArticlePage\" />
     <Folder Include="src\components\SignUpNewsletter\" />
-    <Folder Include="src\components\weather\" />
     <Folder Include="src\Modal\" />
     <Folder Include="src\pages\Articles\" />
     <Folder Include="src\pages\Register\" />
@@ -35,5 +33,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="src\NewFolder1\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptConfiguration Remove="src\components\weather\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="src\components\weather\**" />
   </ItemGroup>
 </Project>

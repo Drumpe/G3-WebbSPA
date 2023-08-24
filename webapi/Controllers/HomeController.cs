@@ -197,7 +197,7 @@ namespace webapi.Controllers
 				else
 				{
 					//Error! Inte en siffra.
-					return BadRequest();
+					return Ok(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 				}
 			}
 			return Ok(articles.Take(1).ToList()); //Borde aldrig komma hit, då har någon ändrat i koden och gjort fel
