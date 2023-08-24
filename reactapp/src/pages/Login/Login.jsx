@@ -28,7 +28,7 @@ const Login = () => {
             if (response.status === 200) {
                 setCookie('session', 'test', { path: '/' });
                 localStorage.setItem("token", data.token)
-                navigate('/articles');
+                navigate('/mainPage');
             } else {
                 alert('Wrong credentials.');
             }
