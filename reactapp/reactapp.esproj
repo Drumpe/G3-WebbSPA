@@ -20,6 +20,9 @@
     <Folder Include="src\components\footer\" />
     <Folder Include="src\components\Navbar\" />
     <Folder Include="src\components\ArticlePage\" />
+    <Folder Include="src\components\SignUpNewsletter\" />
+    <Folder Include="src\components\weather\" />
+    <Folder Include="src\Modal\" />
     <Folder Include="src\pages\Articles\" />
     <Folder Include="src\pages\Register\" />
   </ItemGroup>

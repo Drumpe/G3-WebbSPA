@@ -1,5 +1,5 @@
 import React from 'react';
-import '/wwwroot/css/site.css';
+import '/public/css/site.css';
 
 function Navbar() {
     return (
@@ -9,7 +9,7 @@ function Navbar() {
 
                 <a className="navbar-brand" href="#">
 
-                    <img src="/wwwroot/Images/Logo1.png" alt="Atlas Portal"></img>
+                    <img src="/public/Images/Logo1.png" alt="Atlas Portal"></img>
 
                 </a>
 
@@ -73,7 +73,7 @@ function Navbar() {
             </div>
 
 
-            <div className="img-bg"><img id="theme-icon" src="/wwwroot/Images/moon-icon.png"></img>
+            <div className="img-bg"><img id="theme-icon" src="/public/Images/moon-icon.png"></img>
             </div>
         </nav>
     );

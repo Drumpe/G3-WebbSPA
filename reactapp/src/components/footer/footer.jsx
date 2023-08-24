@@ -1,5 +1,6 @@
 import React from 'react';
-import '/wwwroot/css/footerstyle.css';
+import '/public/css/footerstyle.css';
+import SignUp from '../SignUpNewsletter/signUp';
 
 
 
@@ -31,45 +32,11 @@ function Footer() {
                 <div className="row secondary-footer">
 
                     <div className="signup col">
-                        <p className="signup-text">Come on! Sign up for some more mjau-content</p>
-                        {/*@*Bootstrap-knappen*@*/}
-                        <button id="customPrompt" data-bs-toggle="modal" data-bs-target="#signUp" className="btn-footer bf-1">Sign up for our email</button>
-
-                    </div>
-                    {/* @*Bootstrap knapp för signup*@*/}
-                    <div className="modal fade" id="signUp" tabIndex="-1" aria-labelledby="signUpLabel" aria-hidden="true">
-                        <div className="modal-dialog">
-                            <div className="modal-content">
-                                <div className="modal-header">
-                                    <h5 className="modal-title" id="signUpLabel">Aaawwww, U R CUTE </h5>
-                                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div className="modal-body">
-                                    Sign up here for content
-
-                                </div>
-
-
-                                <div className="input-group mb-3">
-                                    <div>&ensp; &ensp;</div>
-                                    {/*<div>*/}
-                                        
-
-                                    {/*<input id="emailInput" type="email" className="form-control" placeholder="Sign up with your email" aria-label="Recipient's email">*/}
-                                    {/*   </div>*/}
-                                    {/*        <button id="submitButton" className="btn btn-primary">Sign me UP!</button>*/}
-                                    {/*    </div>*/}
-                                    {/*    <div className="modal-footer">*/}
-                                    {/*        <div id="thankYouMessage" style="display: none;">Thank you for signing up!</div>*/}
-                                    {/*        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>*/}
-                                    </div>
-                                </div>
-                            </div>
+                       
+                                
+                            <SignUp />
                         </div>
-                        {/*@*Button for modal - saving the email temporary for no reason :)*@*/}
-                        <script>
 
-                        </script>
 
                         <div className="gridfooter col">
 

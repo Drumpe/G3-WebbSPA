@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Footer from '../../components/footer/footer';
 import Navbar from '../../components/Navbar/navbar';
-import '/wwwroot/css/StylingBody.css';
+import '/public/css/StylingBody.css';
 
 // In order to use react hooks like the `useCookies` hook, the must use functional components.
 // Functional components are the industry standard for the react components at the moment.

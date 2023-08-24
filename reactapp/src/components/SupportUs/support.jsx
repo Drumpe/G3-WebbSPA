@@ -1,4 +1,6 @@
-function closeButton() {
+/***
+ * 
+ * function closeButton() {
             var closeButton = document.getElementById("closebutton");
             closeButton.addEventListener('click', () => {
                 var pageUrl = 'https://localhost:7241';
@@ -125,3 +127,9 @@ initConfetti();
 sendButton.addEventListener('click', function () {
     initConfetti(), render();
 });
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
