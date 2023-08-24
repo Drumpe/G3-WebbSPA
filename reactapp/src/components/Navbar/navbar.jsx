@@ -30,9 +30,9 @@ function Navbar() {
 
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("")}>All</a></dt>
-                                <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("Halsa")}>Hälsa</a></dt>
-                                <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("SamhalleKonflikter")}>Samhälle och konflikt</a></dt>
-                                <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("Miljo")}>Miljö</a></dt>
+                                <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("Halsa")}>HÃ¤lsa</a></dt>
+                                <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("SamhalleKonflikter")}>SamhÃ¤lle och konflikt</a></dt>
+                                <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("Miljo")}>MiljÃ¶</a></dt>
                                 <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("VetenskapTeknik")}>Vetenskap & Teknik</a></dt>
                                 <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("LivsstillFritt")}>Livsstill & Frittid</a></dt>
                                 <dt className="col"><a className="footer-nav-headline" onClick={() => this.populateArticleData("Ekonomi")}>Ekonomi</a></dt>

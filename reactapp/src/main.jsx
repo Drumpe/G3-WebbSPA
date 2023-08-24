@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import 'bootstrap/dist/css/bootstrap.css'; // Import Bootstrap CSS
+//import 'bootstrap/dist/css/bootstrap.css'; // Import Bootstrap CSS
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';

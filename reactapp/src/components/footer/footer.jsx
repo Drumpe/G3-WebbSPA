@@ -15,9 +15,9 @@ function Footer() {
                 <div className="align-top text-center">
 
                     <dl className="row m-0">
-                        <dt className="col"><a className="footer-nav-headline" href="?topic=Halsa&sortBy=">H‰lsa</a></dt>
-                        <dt className="col"><a className="footer-nav-headline" href="?topic=SamhalleKonflikter&sortBy=">Samh‰lle & Konflikter</a></dt>
-                        <dt className="col"><a className="footer-nav-headline" href="?topic=Miljo&sortBy=">Miljˆ</a></dt>
+                        <dt className="col"><a className="footer-nav-headline" href="?topic=Halsa&sortBy=">H√§lsa</a></dt>
+                        <dt className="col"><a className="footer-nav-headline" href="?topic=SamhalleKonflikter&sortBy=">Samh√§lle & Konflikter</a></dt>
+                        <dt className="col"><a className="footer-nav-headline" href="?topic=Miljo&sortBy=">Milj√∂</a></dt>
                         <dt className="col"><a className="footer-nav-headline" href="?topic=VetenskapTeknik&sortBy=">Vetenskap & Teknik</a></dt>
                         <dt className="col"><a className="footer-nav-headline" href="?topic=LivsstillFritt&sortBy=">Livsstil & Fritid</a></dt>
                         <dt className="col"><a className="footer-nav-headline" href="?topic=Ekonomi&sortBy=">Ekonomi</a></dt>
@@ -43,9 +43,9 @@ function Footer() {
                             <div className="row">
                                 <div className="footer-box col">
                                     <dl className="dl">
-                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Hj‰lp</a></dt>
-                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">KlagomÂl</a></dt>
-                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">R‰ttelse</a></dt>
+                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Hj√§lp</a></dt>
+                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Klagom√•l</a></dt>
+                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">R√§ttelse</a></dt>
                                         <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kontakta oss</a></dt>
                                         <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kakor</a></dt>
 
