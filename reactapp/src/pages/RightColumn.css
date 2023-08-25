@@ -1,0 +1,79 @@
+/* Styling for the right column component */
+.right-column {
+    
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+   
+}
+
+/* Styling for the futuristic content */
+.futuristic-content {
+    position: relative;
+    max-width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for video */
+}
+
+    /* Styling for the video */
+    .futuristic-content video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        object-fit: cover; /* Ensure the video covers the container */
+    }
+
+/* Styling for the text overlay */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    z-index: 1; /* Place the text in front of the video */
+    opacity:0.9;
+}
+
+    .text-overlay h2, text-overlay h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .text-overlay p {
+        font-size: 16px;
+    }
+
+
+
+/* Styling for the additional content */
+.additional-content {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the content */
+}
+
+.additional-image {
+    max-width: 100%; /* Ensure the image fits within the column */
+    height: auto;
+    border-radius: 5px;
+}
+
+
+    .additional-content h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .additional-content p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+

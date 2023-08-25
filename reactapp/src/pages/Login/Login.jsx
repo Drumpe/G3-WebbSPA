@@ -48,22 +48,24 @@ const Login = () => {
                                     <div className="row">
                                         <form>
                                             <div className="col-md-12 mb-3">
-                                                <label>Username:</label>
+                                                <label style={{ fontWeight: 'bold', marginBottom: '2px', display: 'block' }}>Username:</label>
                                                 <input
                                                     type="text"
                                                     value={username}
                                                     onChange={(e) => setUsername(e.target.value)}
+                                                    style={{ width: '75%', padding: '8px', border: '1px solid #ccc', borderRadius: '5px' }}
                                                 />
                                             </div>
                                             <div className="col-md-12 mb-3">
-                                                <label>Password:</label>
+                                                <label style={{ fontWeight: 'bold', marginBottom: '2px', display: 'block' }}>Password:</label>
                                                 <input
                                                     type="password"
                                                     value={password}
                                                     onChange={(e) => setPassword(e.target.value)}
+                                                    style={{ width: '75%', padding: '8px', border: '1px solid #ccc', borderRadius: '5px' }}
                                                 />
                                             </div>
-                                            <div className="col-md mb-3">
+                                            <div className="col-md mb-3 d-flex justify-content-between">
                                                 <button className="btn btn-sm btn-primary" type="button" onClick={handleLogin}>
                                                     Login
                                                 </button>

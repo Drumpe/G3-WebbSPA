@@ -1,59 +1,8 @@
-.card.login-container{
+.card.login-container {
 
-    background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity */
-    padding: 20px;
     border-radius: 10px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.card.registration-container {
-    margin-top: 43px; /* Remove top margin for the registration card */
-}
-
-
-.input-container {
-    margin-bottom: 15px;
-}
-
-/* Style for input labels */
-.input-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-/* Style for input fields */
-.input-field {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-/* Style for login button */
-.login-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-    .login-button:hover {
-        background-color: #0056b3;
-    }
-
-/* Style for registration link */
-.register-link {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
-    color: #007bff;
-    text-decoration: none;
+    margin: 50px auto; /* Center the card horizontally and provide vertical margin */
+    max-width: 400px; /* Limit the width to maintain a neat appearance */
+    
+    
 }

@@ -3,12 +3,6 @@
     animation: bg-animation 15s infinite alternate;
     background-size: 400%
 }
-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Make sure the body takes at least the full viewport height */
-}
 
 
 :root {
