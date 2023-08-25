@@ -5,15 +5,24 @@
 }
 body {
     margin: 0;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make sure the body takes at least the full viewport height */
+}
+
+
+:root {
+    --gradient: linear-gradient(to right, #845ec2, #d65db1, #ff6f91, #ff9671, #ffc75f, #f9f871);
+}
+
+body {
+    margin: 0;
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
-}
-
-:root {
-    --gradient: linear-gradient( to right, #845ec2, #d65db1, #ff6f91, #ff9671, #ffc75f, #f9f871 );
+    background-image: var(--gradient);
+    animation: bg-animation 15s infinite alternate;
+    background-size: 400%;
 }
 
 @keyframes bg-animation {
@@ -25,6 +34,9 @@ body {
         background-position: right;
     }
 }
+
+/* The rest of your styles remain the same */
+
 
 .box-weather {
     display: flex;
