@@ -42,51 +42,44 @@ const Login = () => {
                 <div className="row justify-content-center">
                     <div className="col-md-6">
                         <div className="card login-container">
-                            
                             <div className="card-body text-center">
                                 <h2>Logga in</h2>
                                 <div className="container">
                                     <div className="row">
-                                    <form>
-                                        <div className="col-md-12 mb-3">
-            
-                                        
-                
-                    <label>Username:</label>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                                         </div>
+                                        <form>
                                             <div className="col-md-12 mb-3">
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
+                                                <label>Username:</label>
+                                                <input
+                                                    type="text"
+                                                    value={username}
+                                                    onChange={(e) => setUsername(e.target.value)}
+                                                />
                                             </div>
-                                            <div className="col-md mb3">
-                                                <button className="btn btn-sm btn-primary"type="button" onClick={handleLogin}>
-                    Login
-                </button>
-                <a type="button" href="/register">
-                    Create a new account
+                                            <div className="col-md-12 mb-3">
+                                                <label>Password:</label>
+                                                <input
+                                                    type="password"
+                                                    value={password}
+                                                    onChange={(e) => setPassword(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="col-md mb-3">
+                                                <button className="btn btn-sm btn-primary" type="button" onClick={handleLogin}>
+                                                    Login
+                                                </button>
+                                                <a type="button" href="/register">
+                                                    Create a new account
                                                 </a>
-                </div>
-            </form>
-                                        </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
-                        </div>
-
-                        
+                            </div>
                         </div>
                     </div>
+                </div>
             </div>
-            </div>
-        
+        </div>
     );
 };
 

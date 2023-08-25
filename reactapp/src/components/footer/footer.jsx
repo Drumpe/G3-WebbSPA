@@ -8,11 +8,12 @@ function Footer() {
 
     return (
         
-            <div className="footer text-white ">
+        <div className="footer-container">
 
 
 
-                <div className="align-top text-center">
+            <div className="footer-content">
+
 
                     <dl className="row m-0">
                         <dt className="col"><a className="footer-nav-headline" href="?topic=Halsa&sortBy=">Hälsa</a></dt>

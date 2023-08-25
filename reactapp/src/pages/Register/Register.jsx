@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../../pages//Register/register.css';
+
 
 const Register = () => {
     const [username, setUsername] = useState('');
@@ -28,36 +30,57 @@ const Register = () => {
     // TODO: add styles
     return (
         <div>
-            <h1>Register</h1>
-            <form>
-                <div>
-                    <label>Username:</label>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
+            
+          
+
+            <div className="login-overlay">
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-md-6">
+                            <div className="card registration-container">
+                                <h2>Register</h2>
+                                <div className="input-container">
+                                    <label className="input-label">Username:</label>
+                                    <input
+                                        className="input-field"
+                                        type="text"
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}
+                                    />
+                                </div>
+
+                                <div>
+                                    <div className="input-container">
+                                        <label className="input-label">Email:</label>
+                                        <input
+                                            className="input-field"
+                                            type="email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="input-container">
+                                        <label className="input-label">Password:</label>
+                                        <input
+                                            className="input-field"
+                                            type="password"
+                                            value={password}
+                                            onChange={(e) => setPassword(e.target.value)}
+                                        />
+                                    </div>
+
+                                    <button className="login-button" type="button" onClick={handleRegister}>
+                                        Register
+                                    </button>
+                                    <a className="register-link" href="/login">
+                                        Already have an account? Log in
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label>Email:</label>
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label>Password:</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <button type="button" onClick={handleRegister}>
-                    Register
-                </button>
-            </form>
+            </div>
         </div>
     );
 };
