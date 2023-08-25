@@ -1,11 +1,5 @@
 import { useEffect, useState } from 'react';
-import Footer from '../../components/footer/footer';
-import Navbar from '../../components/Navbar/navbar';
-import '/public/css/StylingBody.css';
 
-// In order to use react hooks like the `useCookies` hook, the must use functional components.
-// Functional components are the industry standard for the react components at the moment.
-// Class components vs Functional components: https://www.geeksforgeeks.org/differences-between-functional-components-and-class-components/
 const Articles = () => {
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(true)
@@ -14,55 +8,57 @@ const Articles = () => {
         populateArticleData();
     }, [])
 
+
+    const renderArticlesCards = (articles) => {
+        return (
+            <div>
+                {articles.map((article, index) =>
+                    <a href={article.link} className="card-link" target="_blank" rel="noopener noreferrer" key={index}>
+                        <div className="mb-4 card-body card py-1">
+                            <h5 className="card-title">{article.title}</h5>
+                            <p className="card-text">{article.summary}</p>
+                            <div className="d-flex justify-content-between align-items-baseline">
+                                <small className="text-muted">{formatDate(article.published)}</small>
+                                <span className="card-topic text-right">{article.topic.join(", ")}</span>
+                            </div>
+                        </div>
+                    </a>
+                )}
+            </div>
+        )
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false };
+            const formattedDate = date.toLocaleDateString(undefined, options);
+            return formattedDate;
+        }
+    }
+
+
     const populateArticleData = async () => {
+        //För topic, sortBy och limit val
+        const queryString = window.location.search;
+        const searchParams = new URLSearchParams(queryString); //Kollar url länken efter '?'
+        var topic = searchParams.get('topic');
+        var sortBy = searchParams.get('sortBy');
+        var limit = searchParams.get('limit');
+        topic = topic == null ? "" : topic;
+        sortBy = sortBy == null ? "" : sortBy;
+        limit = limit == null ? "" : limit;
+        setLoading(true)
         const token = localStorage.getItem("token")
-        const response = await fetch('/home', { headers: { 'Authorization': `Bearer ${token}`, "Content-Type": "application/json" } });
+        const response = await fetch(`/home?topic=${topic}&sortBy=${sortBy}&limit=${limit}`)
         const data = await response.json();
         setArticles(data)
         setLoading(false)
     }
 
-    const renderArticlesTable = (articles) => {
-        return (
-            <div className="d-flex justify-content-center">
-            
-                <table className='table table-striped' aria-labelledby="tabelLabel">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Summary</th>
-                        <th>Link</th>
-                        <th>Published</th>
-                        <th>Topic</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {articles.map(article =>
-                        <tr key={article.title}>
-                            <td>{article.title}</td>
-                            <td>{article.summary}</td>
-                            <td><a href={article.link} target="_blank" rel="noopener noreferrer">{article.link}</a></td>
-                            <td>{article.published}</td>
-                            <td>{article.topic.join(", ")}</td>
-                        </tr>
-                    )}
-                </tbody>
-                </table>
-                
-            </div>
-        );
-    }
-
     return (
         <div>
-            <Navbar />
-            <h1 id="tabelLabel">Artiklar</h1>
             {loading
-                ? <p><em>Loading...</em></p>
-                : renderArticlesTable(articles)}
-            <Footer />
-        </div >
+                ? <div><p><em>Loading... API'et startas...</em></p> <script>window.location.reload(1);</script></div>
+                : renderArticlesCards(articles)}
+        </div>
     );
 }
-
 export default Articles;
