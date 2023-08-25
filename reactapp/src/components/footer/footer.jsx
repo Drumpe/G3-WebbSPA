@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import '/public/css/footerstyle.css';
 import SignUp from '../SignUpNewsletter/signUp';
@@ -75,7 +76,9 @@ function Footer() {
 
                                 <div className="col">
                                     <h2 className="support-h2">Support us!</h2>
+                                    <a href="src/components/SupportUs/support.html"> 
                                     <button id="supportbutton" className="btn-footer bf-2">Support us</button>
+                                    </a>
                                 </div>
                             </div>
 
