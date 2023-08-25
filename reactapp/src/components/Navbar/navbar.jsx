@@ -1,5 +1,6 @@
 import React from 'react';
-import '/public/css/site.css';
+//import '/public/css/site.css';
+import Theme from './Theme'
 
 
 
@@ -79,9 +80,8 @@ function Navbar() {
                 </ul>
             </div>
 
+            <Theme />
 
-            <div className="img-bg"><img id="theme-icon" src="/public/Images/moon-icon.png"></img>
-            </div>
         </nav>
     );
 }
