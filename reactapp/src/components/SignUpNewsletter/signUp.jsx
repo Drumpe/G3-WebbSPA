@@ -1,37 +1,49 @@
-import React from 'react';
+//import React from 'react';
 import '/public/css/footerstyle.css';
-import Modal from '../../../src/Modal/Modal';
+import PopUp from './PopUp';
+import React, { useState } from 'react';
 
 
 
-function SignUp() {
-    
+const SignUp = () => {
 
-    //const [open, setOpen] = React.useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-    //const handleClose = () => { setOpen(false); };
+    const openPopup = () => {
+        setIsPopupOpen(true);
+    };
 
-    const handleOpen = () => {
-        setOpen(true);
+    const closePopup = () => {
+        setIsPopupOpen(false);
+    };
+
+    const handleEmailSubmit = () => {
+        // Simulate email registration process here (no API call needed)
+        closePopup();
     };
 
 
     return (
         <div className="footer text-white ">
-        
+
             <div style={{ display: 'block', padding: 30 }}>
-                <h4 className="signup-text">Come on! Sign up for some more mjau-content</h4>
-                <button type="button"
-                    onClick={handleOpen}>
-                    Click Me to Open Modal
+                <h2 className="signup-text">Come on! Sign up for some more mjau-content</h2>
+                <button type="button" onClick={openPopup}>
+                    Click Me to Open popup
                 </button>
-                <Modal />
-            </div>
+                <PopUp isOpen={isPopupOpen} onClose={closePopup} onSubmit={handleEmailSubmit} />
 
             </div>
+
+        </div>
 
 
     );
-}
+};
 
 export default SignUp;
+
+
+
+
+
