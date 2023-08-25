@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import './PopUp.css';
 
 
 const PopUp = ({ isOpen, onClose, onSubmit }) => {
     const [email, setEmail] = useState('');
+    const popupClassName = isOpen ? 'popup-overlay show' : 'popup-overlay';
 
 
     if (!isOpen) return null;
 
     return (
-        <div>
-            <button className="close-button" onClick={onClose}>
+        <div className={popupClassName}>
+            <button className="btn-footer bf-1" onClick={onClose}>
                 Close
             </button>
             <form>
@@ -22,7 +24,7 @@ const PopUp = ({ isOpen, onClose, onSubmit }) => {
                         required
                     />
                 </label>
-                <button type="submit" onClick={onSubmit}>Register</button>
+                <button type="submit" className="btn-footer bf-1" onClick={onSubmit}>Register</button>
             </form>
         </div>
     );
