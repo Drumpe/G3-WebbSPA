@@ -1,5 +1,7 @@
 import { fileURLToPath, URL } from 'node:url';
+
 import { defineConfig } from 'vite';
+import { spawn } from 'child_process';
 import plugin from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
@@ -21,36 +23,61 @@ const certFilePath = path.join(baseFolder, `${certificateName}.pem`);
 const keyFilePath = path.join(baseFolder, `${certificateName}.key`);
 
 // https://vitejs.dev/config/
-export default defineConfig({
-    plugins: [plugin()],
-    resolve: {
-        alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url))
-        }
-    },
-    server: {
-        proxy: {
-            '^/weatherforecast': {
-                target: 'https://localhost:7242/',
-                secure: false
-            },
-            '^/home': {  // <-- Added this route
-                target: 'https://localhost:7242/',
-                secure: false
-            },
-            '^/authenticate/login': {  // <-- Added this route
-                target: 'https://localhost:7242/',
-                secure: false
-            },
-            '^/authenticate/register': {  // <-- Added this route
-                target: 'https://localhost:7242/',
-                secure: false
+export default defineConfig(async () => {
+    // Ensure the certificate and key exist
+    if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
+        // Wait for the certificate to be generated
+        await new Promise((resolve) => {
+            spawn('dotnet', [
+                'dev-certs',
+                'https',
+                '--export-path',
+                certFilePath,
+                '--format',
+                'Pem',
+                '--no-password',
+            ], { stdio: 'inherit', })
+                .on('exit', (code) => {
+                    resolve();
+                    if (code) {
+                        process.exit(code);
+                    }
+                });
+        });
+    }
+
+
+    return {
+        plugins: [plugin()],
+        resolve: {
+            alias: {
+                '@': fileURLToPath(new URL('./src', import.meta.url))
             }
         },
-        port: 5173,
-        https: {
-            key: fs.readFileSync(keyFilePath),
-            cert: fs.readFileSync(certFilePath),
+        server: {
+            proxy: {
+                '^/weatherforecast': {
+                    target: 'https://localhost:7242/',
+                    secure: false
+                },
+                '^/home': {  // <-- Added this route
+                    target: 'https://localhost:7242/',
+                    secure: false
+                },
+                '^/authenticate/login': {  // <-- Added this route
+                    target: 'https://localhost:7242/',
+                    secure: false
+                },
+                '^/authenticate/register': {  // <-- Added this route
+                    target: 'https://localhost:7242/',
+                    secure: false
+                }
+            },
+            port: 5173,
+            https: {
+                key: fs.readFileSync(keyFilePath),
+                cert: fs.readFileSync(certFilePath),
+            }
         }
     }
 })
