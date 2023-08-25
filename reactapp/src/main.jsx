@@ -4,9 +4,11 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
 import Login from './pages/Login/login';
-import Articles from './pages/Articles/articles';
+import MainPage from './pages/mainPage';
 import Register from './pages/Register/register';
 import PrivateRoute from './components/PrivateRoute';
+import Footer from './components/footer/footer';
+import Navbar from './components/Navbar/navbar';
 
 
 
@@ -14,17 +16,21 @@ const App = () => {
     return (
         <CookiesProvider>
             <Router>
+                <Navbar />
                 <div>
-                    <Routes>
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
-                        <Route
-                            path="/articles"
-                            element={<PrivateRoute path="/articles"> <Articles /> </PrivateRoute>}
-                        />
-                        <Route path="/*" element={<Login />} />
-                    </Routes>
+                    <div className="container-fluid row mainPage">
+                        <Routes>
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/register" element={<Register />} />
+                            <Route
+                                path="/mainPage"
+                                element={<PrivateRoute path="/MainPage"> <MainPage /> </PrivateRoute>}
+                            />
+                            <Route path="/*" element={<Login />} />
+                        </Routes>
+                    </div>
                 </div>
+                <Footer />
             </Router>
         </CookiesProvider>
     );

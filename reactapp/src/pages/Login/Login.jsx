@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import './login.css';
-import Footer from '../../components/footer/footer';
-import Navbar from '../../components/Navbar/navbar';
+
 //import App from 'main.jsx'; 
 
 const Login = () => {
@@ -29,7 +28,7 @@ const Login = () => {
             if (response.status === 200) {
                 setCookie('session', 'test', { path: '/' });
                 localStorage.setItem("token", data.token)
-                navigate('/articles');
+                navigate('/mainPage');
             } else {
                 alert('Wrong credentials.');
             }
@@ -39,7 +38,6 @@ const Login = () => {
     // TODO: add styles
     return (
         <div>
-            <Navbar />
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-6">
@@ -87,7 +85,6 @@ const Login = () => {
                         </div>
                     </div>
             </div>
-                <Footer />
             </div>
         
     );
