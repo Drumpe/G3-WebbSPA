@@ -17,8 +17,8 @@
     <None Remove="src\NewFolder\**" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="src\components\ScrollToTop\" />
     <Folder Include="src\components\SignUpNewsletter\" />
-    <Folder Include="src\Modal\" />
     <Folder Include="src\pages\Articles\" />
     <Folder Include="src\pages\Register\" />
   </ItemGroup>

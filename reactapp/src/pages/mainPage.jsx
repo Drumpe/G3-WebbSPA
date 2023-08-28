@@ -14,6 +14,7 @@ const mainPage = () => {
             <div className="col-sm-3 mt-5"> 
                 <RightColumn />
             </div>
+
         </>
     );
 };
