@@ -9,6 +9,7 @@ import Register from './pages/Register/register';
 import PrivateRoute from './components/PrivateRoute';
 import Footer from './components/footer/footer';
 import Navbar from './components/Navbar/navbar';
+import ScrollToTop from './components/ScrollToTop/buttonScrollToTop';
 
 
 
@@ -26,10 +27,12 @@ const App = () => {
                                 path="/mainPage"
                                 element={<PrivateRoute path="/MainPage"> <MainPage /> </PrivateRoute>}
                             />
+                            
                             <Route path="/*" element={<Login />} />
                         </Routes>
                     </div>
                 </div>
+                <ScrollToTop />
                 <Footer />
             </Router>
         </CookiesProvider>
