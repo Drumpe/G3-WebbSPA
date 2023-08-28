@@ -7,17 +7,16 @@ html, body {
 .footer-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    justify-content: flex-end; /* Align content to the bottom */
+    min-height: 60vh; /* Adjust the value to reduce the overall height */
+    justify-content: flex-end;
     position: relative;
 }
 
 .footer-content {
     width: 100%;
     background-color: var(--primary-color);
-    /* Add padding, margin, or other styling as needed */
+    padding: 10px 0; /* Reduce the padding to move the content up */
 }
-
 
 
 footer::before {

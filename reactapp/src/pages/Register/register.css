@@ -1,17 +1,12 @@
-
-
-
-
-
 .input-container {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* Style for input labels */
 .input-label {
-    display: block;
+ 
     font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 12.5px; /* Adjust the font size as needed */
 }
 
 /* Style for input fields */
@@ -43,7 +38,7 @@
     margin-top: 10px;
     color: #007bff;
     text-decoration: none;
-
+    font-size: 14px; /* Adjust the font size as needed */
 }
 
 
@@ -60,5 +55,6 @@
     align-items: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin-top: 50px; /* Adjust this value as needed */
-    text-align:center;
+    text-align: center;
+
 }

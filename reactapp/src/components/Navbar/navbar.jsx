@@ -1,11 +1,15 @@
 import React from 'react';
 //import '/public/css/site.css';
 import Theme from './Theme'
+import { Link, useLocation } from 'react-router-dom';
 
 
 
 
 function Navbar() {
+
+    
+    const location = useLocation();
  
     return (
         <nav className="navbar navbar-expand-lg border-bottom box-shadow">
@@ -14,15 +18,21 @@ function Navbar() {
 
                 <a className="navbar-brand" href="#">
 
-                    <img src="/public/Images/Logo1.png" alt="Atlas Portal"></img>
+                    <img src="/public/Images/Logo1.png" alt="Atlas Portal">
+                    
+                    </img>
 
                 </a>
 
 
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <a className="nav-link" onClick={() => populateArticleData("")}>Hem</a>
-
+                        <a
+                            href="/mainPage"
+                            className="nav-link"
+                        >
+                            Hem
+                        </a>
                     </li>
 
 
@@ -55,7 +65,7 @@ function Navbar() {
 
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Nyheter</a>
+                        <a className="nav-link" href="/mainPage">Nyheter</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="?topic=Idrott&sortBy=">Sport</a>
@@ -72,7 +82,12 @@ function Navbar() {
                 </ul>
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="/src/components/login/Login.html" id="loginLink">Logga in</a>
+                        <a
+                            href="/Login"
+                            className="nav-link"
+                        >
+                            Logga in
+                        </a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">Prenumenera</a>

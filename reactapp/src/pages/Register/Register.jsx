@@ -69,7 +69,7 @@ const Register = () => {
                                         />
                                     </div>
 
-                                    <button className="login-button" type="button" onClick={handleRegister}>
+                                    <button className="btn btn-sm btn-primary" type="button" onClick={handleRegister}>
                                         Register
                                     </button>
                                     <a className="register-link" href="/login">

@@ -45,8 +45,8 @@ a {
 }
 
 .navbar-brand img {
-    max-height: 60px;
-    width: auto;
+    max-height: 40px;
+    width: 100%;
     margin-right: 10px;
 }
 
@@ -55,31 +55,8 @@ a {
     font-weight: bold;
 }
 
-.navcontainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px; /* Set a maximum width to avoid overlapping */
-    height: 50px; /* You can adjust the height as needed */
-    padding: 0;
-    position: fixed;
-    top: 0;
-    z-index: 1000; /* Set a higher z-index to be in front of other elements */
-    background-color: var(--primary-color); /* You might need to define this variable */
-}
 
-@media (max-width: 500px) {
-    .navcontainer {
-        flex-direction: column;
-        justify-content: center;
-    }
-}
 
-.mainPage {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
 
 /* Korten */
 .card {
@@ -128,7 +105,8 @@ a.dropdown-item[b-5u4fwv6eth] {
     display: block;
 }
 
-.login-box {
+/* Detta gör inget / ATTHAPHON */ 
+/*.login-box {
     width: 300px;
     margin: 0 auto;
     padding: 20px;
@@ -137,7 +115,7 @@ a.dropdown-item[b-5u4fwv6eth] {
 
     .login-box input {
         width: 93.5%;
-        margin-bottom: 10px;
+        margin-bottom: 10000px;
         padding: 8px;
     }
 
@@ -150,14 +128,8 @@ a.dropdown-item[b-5u4fwv6eth] {
         cursor: pointer;
     }
 
-
-.img-bg {
-    cursor: pointer;
-    border-radius: 50%;
-    margin-right: 1.5rem;
-}
-
 main.mainclass {
     background-color: var(--primary-color);
     padding-top: 1.5rem;
 }
+*/
