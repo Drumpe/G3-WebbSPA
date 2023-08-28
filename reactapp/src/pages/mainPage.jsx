@@ -1,5 +1,5 @@
 import RightColumn from './RightColumn'
-import Weather from './Weather'
+import Weather from './Weather/Weather'
 import Articles from './Articles/Articles'
 
 const mainPage = () => {

@@ -7,7 +7,7 @@ html, body {
 .footer-container {
     display: flex;
     flex-direction: column;
-    min-height: 60vh; /* Adjust the value to reduce the overall height */
+    
     justify-content: flex-end;
     position: relative;
 }

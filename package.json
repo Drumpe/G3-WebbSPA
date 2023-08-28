@@ -1,5 +1,10 @@
 {
   "dependencies": {
+    "react-cookie": "^6.1.0",
     "react-router-dom": "^6.15.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.4",
+    "vite": "^4.4.9"
   }
 }
