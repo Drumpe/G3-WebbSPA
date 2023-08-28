@@ -74,36 +74,45 @@ a {
     text-decoration: none;
 }
 
+
+/* Style for the dropdown menu container */
 .dropdown-menu {
-    opacity:0.95;
-    display: none;
-    position: fixed;
-    top: 100%;
+    display: none; /* Hide the dropdown by default */
+    position: absolute; /* Use absolute positioning */
+    top: 100%; /* Position it below the dropdown toggle */
     left: 0;
-    z-index: 1000; /* Updated z-index value */
-    padding: 0;
-    margin: 0;
+    z-index: 999;
     background-color: var(--primary-color);
-    color: var(--secondary-color);
     box-shadow: 0 2px 4px var(--secondary-color);
 }
 
-a.dropdown-item[b-5u4fwv6eth] {
+/* Style for the dropdown items */
+.dropdown-item-custom {
     color: var(--secondary-color);
     padding: 0.5rem 1rem;
     clear: both;
     font-weight: 400;
     text-decoration: none;
     white-space: nowrap;
+    display: block; /* Display the items as blocks to occupy the full width */
 }
 
-.dropdown-item:hover {
-    background-color: rgb(170, 170, 209);
-}
+    /* Hover and focus styles for dropdown items */
+    .dropdown-item-custom:hover,
+    .dropdown-item-custom:focus {
+        text-decoration: none;
+        background-color:lightskyblue;
+        opacity:0.8;
+      
+    }
 
-.dropdown:hover .dropdown-menu {
+/* Show the dropdown menu when hovering the parent */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
     display: block;
 }
+
+/* Rest of your existing styles */
+
 
 /* Detta gör inget / ATTHAPHON */ 
 /*.login-box {
