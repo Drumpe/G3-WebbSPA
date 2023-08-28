@@ -65,10 +65,10 @@ function Navbar() {
 
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="/mainPage">Nyheter</a>
+                        <a className="nav-link" href="/mainPage?limit=10">Nyheter</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="?topic=Idrott&sortBy=">Sport</a>
+                        <a className="nav-link" href="?topic=Idrott&limit=10">Sport</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="?topic=Religion&sortBy=">Kultur</a>
