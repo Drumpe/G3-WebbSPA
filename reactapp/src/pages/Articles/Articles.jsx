@@ -56,7 +56,7 @@ const Articles = () => {
     return (
         <div>
             {loading
-                ? <div><p><em>Loading... API'et startas...</em></p> <script>window.location.reload(1);</script></div>
+                ? <div><p><em>Loading articles... </em></p></div>
                 : renderArticlesCards(articles)}
         </div>
     );
