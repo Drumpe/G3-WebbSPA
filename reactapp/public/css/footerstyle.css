@@ -1,21 +1,27 @@
-/* Add these styles */
+
+/* Add CSS to ensure the layout works as intended */
 html, body {
     height: 100%;
     margin: 0;
+    padding: 0;
 }
 
-.footer-container {
+.wrapper {
     display: flex;
     flex-direction: column;
-    
-    justify-content: flex-end;
-    position: relative;
+    min-height: 100vh;
 }
 
-.footer-content {
-    width: 100%;
+.container-fluid {
+    flex: 1;
+    padding-bottom: 80px; /* Adjust this value based on your footer height */
+}
+
+.footer {
+    flex-shrink: 0;
     background-color: var(--primary-color);
-    padding: 10px 0; /* Reduce the padding to move the content up */
+    padding: 10px 0;
+    text-align: center;
 }
 
 
@@ -123,3 +129,4 @@ footer::before {
 .dt-el:hover {
     font-size: 1rem;
 }
+

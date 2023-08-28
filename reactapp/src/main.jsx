@@ -18,22 +18,31 @@ const App = () => {
         <CookiesProvider>
             <Router>
                 <Navbar />
-                <div>
+                <div className="wrapper">
                     <div className="container-fluid row mainPage">
                         <Routes>
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
                             <Route
                                 path="/mainPage"
-                                element={<PrivateRoute path="/MainPage"> <MainPage /> </PrivateRoute>}
+                                element={
+                                    <PrivateRoute path="/MainPage">
+                                        <MainPage />
+                                    </PrivateRoute>
+                                }
                             />
-                            
+
                             <Route path="/*" element={<Login />} />
                         </Routes>
                     </div>
+
+                    <div className="footer">
+                        <Footer />
+                        <ScrollToTop/>
+                    </div>
                 </div>
-                <ScrollToTop />
-                <Footer />
+                
+                
             </Router>
         </CookiesProvider>
     );
