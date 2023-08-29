@@ -130,3 +130,6 @@ footer::before {
     font-size: 1rem;
 }
 
+.gridfooter {
+    text-align: left;
+}

@@ -38,18 +38,18 @@ function Footer() {
 
                 <div className="gridfooter col col-sm-8">
 
-                    <div className="row">
-                        <div className="footer-box col">
-                            <dl className="dl">
-                                <dt className="dt-el"><a href="#" className="footer-box-el smaller">Hjälp</a></dt>
-                                <dt className="dt-el"><a href="#" className="footer-box-el smaller">Klagomål</a></dt>
-                                <dt className="dt-el"><a href="#" className="footer-box-el smaller">Rättelse</a></dt>
-                                <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kontakta oss</a></dt>
-                                <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kakor</a></dt>
+                            <div className="row">
+                                <div className="footer-box col">
+                                    <dl className="dl">
+                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Hjälp</a></dt>
+                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Klagomål</a></dt>
+                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Rättelse</a></dt>
+                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kontakta oss</a></dt>
+                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kakor</a></dt>
 
 
-                            </dl>
-                        </div>
+                                    </dl>
+                                </div>
 
                         <div className="footer-box col">
                             <dl className="dl">
@@ -81,9 +81,9 @@ function Footer() {
                 </div>
             </div>
 
-            <p>&#169; 2023 Grupp3 WebbNews Mjaumjau. All rights reserved.</p>
-        </div>
-    );
+                    <p>&#169; 2023 Grupp3 WebbNews Mjaumjau. All rights reserved.</p>
+                </div>          
+            );
 }
 
 export default Footer;
