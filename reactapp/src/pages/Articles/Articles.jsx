@@ -18,7 +18,7 @@ const Articles = () => {
                             <h5 className="card-title">{article.title}</h5>
                             <p className="card-text">{article.summary}</p>
                             <div className="d-flex justify-content-between align-items-baseline">
-                                <small className="text-muted">{formatDate(article.published)}</small>
+                                <small className="card-topic">{formatDate(article.published)}</small>
                                 <span className="card-topic text-right">{article.topic.join(", ")}</span>
                             </div>
                         </div>
