@@ -25,7 +25,6 @@ function Footer() {
                         <dt className="col"><a className="footer-nav-headline" href="?topic=Ekonomi&sortBy=">Ekonomi</a></dt>
                         <dt className="col"><a className="footer-nav-headline" href="?topic=Religion&sortBy=">Religion</a></dt>
                         <dt className="col"><a className="footer-nav-headline" href="?topic=Idrott&sortBy=">Idrott</a></dt>
-
                     </dl>
                 </div>
 
@@ -50,8 +49,6 @@ function Footer() {
                                         <dt className="dt-el"><a href="#" className="footer-box-el smaller">Rättelse</a></dt>
                                         <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kontakta oss</a></dt>
                                         <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kakor</a></dt>
-
-
                                     </dl>
                                 </div>
 
@@ -87,13 +84,6 @@ function Footer() {
 
                     <p>&#169; 2023 Grupp3 WebbNews Mjaumjau. All rights reserved.</p>
                 </div>
-                //{/*<script src="~/lib/jquery/dist/jquery.min.js"></script>*/}
-                //{/*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*/}
-                //{/*<script src="~/js/site.js" asp-append-version="true"></script>*/}
-                //{/*@await RenderSectionAsync("Scripts", required: false)*/}
-
-
-
             
             );
 }
