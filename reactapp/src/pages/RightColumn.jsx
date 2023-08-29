@@ -5,7 +5,7 @@ export default class RightColumn extends Component {
     render() {
         return (
             <div className="right-column">
-                <div className="futuristic-content">
+                <div className="futuristic-content card">
                     <video autoPlay loop muted>
                         <source src="/public/Images/Media1.mp4" type="video/mp4" />
                     </video>
@@ -16,7 +16,7 @@ export default class RightColumn extends Component {
                         </a>
                     </div>
                 </div>
-                <div className="additional-content">
+                <div className="additional-content card">
                     <img src="/public/Images/Sem.jpg" alt="Discover More" className="additional-image" />
                     <h3>Vacaction for just 1$</h3>
                     <p>Check out our latest destinations and much more</p>

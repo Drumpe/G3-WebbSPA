@@ -93,13 +93,13 @@ footer::before {
 }
 
 .bf-2 {
-    background-color: rgb(223, 219, 179);
+    background-color: var(--button-color);
 }
 
-.bf-2:hover {
-    background-color: rgb(165, 190, 207);
-    color: rgb(255, 253, 253);
-}
+    .bf-2:hover {
+        background-color: rgb(165, 190, 207);
+        color: var(--button-text-color);
+    }
 
 
 .footer-box-el {

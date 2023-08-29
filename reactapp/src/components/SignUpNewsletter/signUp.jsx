@@ -23,22 +23,15 @@ const SignUp = () => {
         closePopup();
     };
 
-
     return (
-        <div className="footer">
-
-            <div style={{ display: 'block', padding: 30 }}>
-                <h2 className="signup-text">Come on! Sign up for some more mjau-content</h2>
-                <button type="registerButton" className="btn-footer bf-2" onClick={openPopup}>
-                    Click Me to Open popup
-                </button>
-                <PopUp isOpen={isPopupOpen} onClose={closePopup} onSubmit={handleEmailSubmit} />
-
-            </div>
+        <div style={{ display: 'block', padding: 30 }}>
+            <h2 className="signup-text">Come on! Sign up for some more mjau-content</h2>
+            <button type="registerButton" className="btn-footer bf-2" onClick={openPopup}>
+                Click Me to Open popup
+            </button>
+            <PopUp isOpen={isPopupOpen} onClose={closePopup} onSubmit={handleEmailSubmit} />
 
         </div>
-
-
     );
 };
 
