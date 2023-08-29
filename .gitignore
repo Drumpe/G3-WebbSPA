@@ -366,3 +366,4 @@ FodyWeavers.xsd
 **/client/src/app/generated/
 /webapi/app.db
 /.gitignore
+/webapi
