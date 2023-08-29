@@ -20,7 +20,7 @@ html {
     font-size: 14px;
 }
 
-.navbar {
+.navbar, .mainPage {
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
