@@ -4,11 +4,14 @@
 :root {
     --primary-color: #ffffff;
     --secondary-color: #05091be1;
+    --button-color: rgb(223, 219, 179);
 }
 
 .dark-theme {
     --primary-color: #05091be1;
     --secondary-color: #fff;
+    --button-color: rgb(211, 146, 225);
+    --button-text-color: rgb(26, 24, 24);
 }
 
 html {
