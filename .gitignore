@@ -367,3 +367,4 @@ FodyWeavers.xsd
 /webapi/app.db
 /.gitignore
 /webapi
+/webapi/app.db
