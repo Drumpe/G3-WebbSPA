@@ -25,7 +25,7 @@ namespace webapi.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult Index(string topic = "", string sortBy = "", string limit = "5")
+		public IActionResult Index(string topic = "", string sortBy = "", string limit = "50")
 		{
 			// Get all articles from the database
 			List<Article> articles = GetArticlesFromDatabase();
@@ -45,7 +45,7 @@ namespace webapi.Controllers
 			}
 			if (string.IsNullOrEmpty(limit))
 			{
-				return Ok(articles.Take(5).ToList()); //Standard 5
+				return Ok(articles.Take(50).ToList()); //Standard 50
 			}
 			else
 			{
