@@ -24,11 +24,6 @@ function Navbar() {
 
                 </a>
 
-
-           
-                 
-               
-
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <a className="nav-link" href="/mainPage?limit=10">Nyheter</a>
@@ -61,26 +56,24 @@ function Navbar() {
 
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                              
 
                                     <dt className="col"><a className="dropdown-item-custom" href="?topic=SamhalleKonflikter&sortBy=">Samhälle & Konflikter</a></dt>
                                     <dt className="col"><a className="dropdown-item-custom" href="?topic=Miljo&sortBy=">Miljö</a></dt>
-
                                     <dt className="col"><a className="dropdown-item-custom" href="?topic=LivsstillFritt&sortBy=">Livsstil & Fritid</a></dt>
                                     <dt className="col"><a className="dropdown-item-custom" href="?topic=Ekonomi&sortBy=">Ekonomi</a></dt>
 
 
-                                </div>
-
-
                             </div>
+
+
+                           
                         </li>
                     </ul>
 
                 </ul>
 
-           
-          
+
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
                         <a

@@ -105,7 +105,8 @@ a {
     .dropdown-item-custom:focus {
         text-decoration: none;
         background-color:lightskyblue;
-        opacity:0.8;
+        opacity:0.8
+        ;
       
     }
 
