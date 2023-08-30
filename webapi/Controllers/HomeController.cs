@@ -88,7 +88,7 @@ namespace webapi.Controllers
 							article.Summary = reader.GetString("summary");
 							article.Link = reader.GetString("link");
 							article.Published = reader.GetDateTime("published");
-							article.Topic = new List<string>(reader.GetString("topic").Split(','));
+							article.Topic = new List<string>(reader.GetString("topic").Split(", ").Distinct().ToList());
 							articles.Add(article);
 						}
 					}
