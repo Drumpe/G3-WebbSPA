@@ -19,6 +19,7 @@ const App = () => {
             <Router>
                 <Navbar />
                 <div className="wrapper">
+
                     <div className="container-fluid row mainPage">
                         <Routes>
                             <Route path="/login" element={<Login />} />
