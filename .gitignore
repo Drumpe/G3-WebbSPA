@@ -365,6 +365,3 @@ FodyWeavers.xsd
 # Misc
 **/client/src/app/generated/
 /webapi/app.db
-/.gitignore
-/webapi
-/webapi/app.db
