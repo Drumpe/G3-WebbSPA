@@ -9,7 +9,6 @@ const Articles = () => {
     const sorting = useSelector(selectedSorting);
     const [loading, setLoading] = useState(true)
 
-
     useEffect(() => {
         populateArticleData();
     }, [searchTopic, sorting])
@@ -23,14 +22,11 @@ const Articles = () => {
         setLoading(false)
     }
 
-   
-
     const renderPage = () => {
         return <>
             <SelectsComponent />
             {renderArticlesCards()}
         </>
-
     }
 
     const renderArticlesCards = () => {
@@ -41,13 +37,24 @@ const Articles = () => {
             const formattedDate = date.toLocaleDateString(undefined, options);
             return formattedDate;
         }
+
+        function remove_img_p(text) {
+            text = text.replaceAll("<p>", "");
+            text = text.replaceAll("</p>", "");
+            if (text.includes("<img src=")) {
+                let endIndex = text.indexOf("/>");
+                text = text.substr(endIndex+2, text.length - 2 - endIndex);
+            }
+            return text;
+        }
+
         return (
             <div>
                 {articles.map((article, index) =>
                     <a href={article.link} className="card-link" target="_blank" rel="noopener noreferrer" key={index}>
                         <div className="mb-4 card-body card py-1">
                             <h5 className="card-title">{article.title}</h5>
-                            <p className="card-text">{article.summary}</p>
+                            <p className="card-text">{remove_img_p(article.summary)}</p>
                             <div className="d-flex justify-content-between align-items-baseline">
                                 <small className="card-topic">{formatDate(article.published)}</small>
                                 <span className="card-topic text-right">{article.topic.join(", ")}</span>
@@ -56,13 +63,11 @@ const Articles = () => {
                     </a>
                 )}
             </div>
-            
         );
     }
 
     return (
         <div>
-            <h1 id="tabelLabel">Article List</h1>
             {loading
                 ? <p><em>Loading...</em></p>
                 : renderPage()}

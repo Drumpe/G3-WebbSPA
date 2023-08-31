@@ -19,13 +19,6 @@ const SelectsComponent = () => {
 
     return (
         <div>
-            <label htmlFor="topic">Select a topic:</label>
-            <select id="topic" name="topic" value={searchTopic} onChange={handleTopicChange}>
-                {
-                    topics.sort().map((t, i) => <option value={t} key={i}>{t}</option>)
-                }
-            </select>
-
             <label htmlFor="sorting">Sort:</label>
             <select id="sorting" name="sorting" value={sorting} onChange={handleSortingChange}>
                 <option value="newest" selected>Newest</option>
