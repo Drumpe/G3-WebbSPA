@@ -1,6 +1,6 @@
-import React from 'react';
-//import '/public/css/site.css';
 import Theme from './Theme'
+import { setTopic } from '../../pages/Articles/redux/topicSortSlice';
+import { useDispatch } from '../../../../node_modules/react-redux/es/exports';
 
 
 
@@ -8,7 +8,7 @@ import Theme from './Theme'
 
 function Navbar() {
 
-    
+    const dispatch = useDispatch();
   
  
     return (
@@ -26,20 +26,20 @@ function Navbar() {
 
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <a className="nav-link" href="/mainPage?limit=10">Nyheter</a>
+                        <a className="nav-link" onClick={() => dispatch(setTopic("All"))}>Nyheter</a>
 
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="?topic=Idrott&limit=10">Sport</a>
+                        <a className="nav-link" onClick={() => dispatch(setTopic("Idrott"))}>Sport</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="?topic=Religion&sortBy=">Kultur</a>
+                        <a className="nav-link" onClick={() => dispatch(setTopic("Religion"))}>Religion</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="?topic=Halsa&sortBy=">Livsstil</a>
+                        <a className="nav-link" onClick={() => dispatch(setTopic("LivsstilFritt"))}>Livsstil</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="?topic=VetenskapTeknik&sortBy=">Teknologi</a>
+                        <a className="nav-link" onClick={() => dispatch(setTopic("VetenskapTeknik"))}>Teknologi</a>
                     </li>
 
                     <ul className="navbar-nav mr-auto">
@@ -58,10 +58,10 @@ function Navbar() {
 
                               
 
-                                    <dt className="col"><a className="dropdown-item-custom" href="?topic=SamhalleKonflikter&sortBy=">Samhälle & Konflikter</a></dt>
-                                    <dt className="col"><a className="dropdown-item-custom" href="?topic=Miljo&sortBy=">Miljö</a></dt>
-                                    <dt className="col"><a className="dropdown-item-custom" href="?topic=LivsstillFritt&sortBy=">Livsstil & Fritid</a></dt>
-                                    <dt className="col"><a className="dropdown-item-custom" href="?topic=Ekonomi&sortBy=">Ekonomi</a></dt>
+                                <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("SamhalleKonflikter"))}>Samhälle & Konflikter</a></dt>
+                            <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Miljo"))}>Miljö</a></dt>
+                                <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("LivsstilFritt"))}>Livsstil & Fritid</a></dt>
+                    <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Ekonomi"))}>Ekonomi</a></dt>
 
 
                             </div>

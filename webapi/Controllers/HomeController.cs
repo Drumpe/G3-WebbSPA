@@ -29,8 +29,12 @@ namespace webapi.Controllers
 		{
 			// Get all articles from the database
 			List<Article> articles = GetArticlesFromDatabase();
-
+			if (topic == "All")
+			{
+				topic = "";
+			} 
 			if (!string.IsNullOrEmpty(topic))
+			
 			{
 				articles = articles.Where(a => a.Topic.Contains(topic)).ToList();
 			}

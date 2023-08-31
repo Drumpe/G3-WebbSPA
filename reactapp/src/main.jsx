@@ -1,5 +1,4 @@
 import './index.css'
-//import 'bootstrap/dist/css/bootstrap.css'; // Import Bootstrap CSS
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
@@ -10,12 +9,14 @@ import PrivateRoute from './components/PrivateRoute';
 import Footer from './components/footer/footer';
 import Navbar from './components/Navbar/navbar';
 import ScrollToTop from './components/ScrollToTop/buttonScrollToTop';
-
+import { Provider } from 'react-redux';
+import store from './pages/Articles/redux/store';
 
 
 const App = () => {
     return (
         <CookiesProvider>
+            <Provider store={store}>
             <Router>
                 <Navbar />
                 <div className="wrapper">
@@ -43,7 +44,8 @@ const App = () => {
                 </div>
                 
                 
-            </Router>
+                </Router>
+            </Provider>
         </CookiesProvider>
     );
 };
