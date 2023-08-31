@@ -9,7 +9,6 @@ const Articles = () => {
     const sorting = useSelector(selectedSorting);
     const [loading, setLoading] = useState(true)
 
-
     useEffect(() => {
         populateArticleData();
     }, [searchTopic, sorting])
@@ -23,14 +22,11 @@ const Articles = () => {
         setLoading(false)
     }
 
-
-
     const renderPage = () => {
         return <>
             <SelectsComponent />
             {renderArticlesCards()}
         </>
-
     }
 
     const renderArticlesCards = () => {
@@ -41,6 +37,7 @@ const Articles = () => {
             const formattedDate = date.toLocaleDateString(undefined, options);
             return formattedDate;
         }
+
         function remove_img_p(text) {
             text = text.replaceAll("<p>", "");
             text = text.replaceAll("</p>", "");
@@ -50,6 +47,7 @@ const Articles = () => {
             }
             return text;
         }
+
         return (
             <div>
                 {articles.map((article, index) =>
@@ -65,13 +63,11 @@ const Articles = () => {
                     </a>
                 )}
             </div>
-
         );
     }
 
     return (
         <div>
-            <h1 id="tabelLabel">Article List</h1>
             {loading
                 ? <p><em>Loading...</em></p>
                 : renderPage()}
