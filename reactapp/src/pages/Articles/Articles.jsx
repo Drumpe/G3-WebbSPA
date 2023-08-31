@@ -1,15 +1,46 @@
 import { useEffect, useState } from 'react';
+import SelectsComponent from './components/select';
+import { selectedSorting, selectedTopic } from './redux/topicSortSlice';
+import { useSelector } from 'react-redux';
 
 const Articles = () => {
     const [articles, setArticles] = useState([])
+    const searchTopic = useSelector(selectedTopic);
+    const sorting = useSelector(selectedSorting);
     const [loading, setLoading] = useState(true)
+
 
     useEffect(() => {
         populateArticleData();
-    }, [])
+    }, [searchTopic, sorting])
 
+    const populateArticleData = async () => {
+        setLoading(true)
+        const token = localStorage.getItem("token")
+        const response = await fetch(`/home?topic=${searchTopic}&sortBy=${sorting}`, { headers: { 'Authorization': `Bearer ${token}` } });
+        const data = await response.json();
+        setArticles(data)
+        setLoading(false)
+    }
 
-    const renderArticlesCards = (articles) => {
+   
+
+    const renderPage = () => {
+        return <>
+            <SelectsComponent />
+            {renderArticlesCards()}
+        </>
+
+    }
+
+    const renderArticlesCards = () => {
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false };
+            const formattedDate = date.toLocaleDateString(undefined, options);
+            return formattedDate;
+        }
         return (
             <div>
                 {articles.map((article, index) =>
@@ -25,40 +56,18 @@ const Articles = () => {
                     </a>
                 )}
             </div>
-        )
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false };
-            const formattedDate = date.toLocaleDateString(undefined, options);
-            return formattedDate;
-        }
-    }
-
-
-    const populateArticleData = async () => {
-        //För topic, sortBy och limit val
-        const queryString = window.location.search;
-        const searchParams = new URLSearchParams(queryString); //Kollar url länken efter '?'
-        var topic = searchParams.get('topic');
-        var sortBy = searchParams.get('sortBy');
-        var limit = searchParams.get('limit');
-        topic = topic == null ? "" : topic;
-        sortBy = sortBy == null ? "" : sortBy;
-        limit = limit == null ? "" : limit;
-        setLoading(true)
-        const token = localStorage.getItem("token")
-        const response = await fetch(`/home?topic=${topic}&sortBy=${sortBy}&limit=${limit}`)
-        const data = await response.json();
-        setArticles(data)
-        setLoading(false)
+            
+        );
     }
 
     return (
         <div>
+            <h1 id="tabelLabel">Article List</h1>
             {loading
-                ? <div><p><em>Loading articles... </em></p></div>
-                : renderArticlesCards(articles)}
-        </div>
+                ? <p><em>Loading...</em></p>
+                : renderPage()}
+        </div >
     );
 }
+
 export default Articles;

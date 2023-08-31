@@ -25,12 +25,16 @@ namespace webapi.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult Index(string topic = "", string sortBy = "", string limit = "5")
+		public IActionResult Index(string topic = "", string sortBy = "", string limit = "50")
 		{
 			// Get all articles from the database
 			List<Article> articles = GetArticlesFromDatabase();
-
+			if (topic == "All")
+			{
+				topic = "";
+			} 
 			if (!string.IsNullOrEmpty(topic))
+			
 			{
 				articles = articles.Where(a => a.Topic.Contains(topic)).ToList();
 			}
@@ -45,7 +49,7 @@ namespace webapi.Controllers
 			}
 			if (string.IsNullOrEmpty(limit))
 			{
-				return Ok(articles.Take(5).ToList()); //Standard 5
+				return Ok(articles.Take(50).ToList()); //Standard 50
 			}
 			else
 			{
@@ -88,7 +92,7 @@ namespace webapi.Controllers
 							article.Summary = reader.GetString("summary");
 							article.Link = reader.GetString("link");
 							article.Published = reader.GetDateTime("published");
-							article.Topic = new List<string>(reader.GetString("topic").Split(','));
+							article.Topic = new List<string>(reader.GetString("topic").Split(", ").Distinct().ToList());
 							articles.Add(article);
 						}
 					}

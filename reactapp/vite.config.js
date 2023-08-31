@@ -48,6 +48,7 @@ export default defineConfig(async () => {
 
 
     return {
+        optimizeDeps: ['@emotion/react'],
         plugins: [plugin()],
         resolve: {
             alias: {
