@@ -133,3 +133,20 @@ footer::before {
 .gridfooter {
     text-align: left;
 }
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100.65%; /* Adjust the width value as needed */
+}
+
+.container-fluid {
+    flex: 1;
+    padding-bottom: 80px; /* Adjust this value based on your footer height */
+}
+
+.footer {
+    flex-shrink: 0;
+    width: 99.35%;
+    text-align: left;
+}
