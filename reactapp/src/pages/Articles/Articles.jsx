@@ -4,7 +4,6 @@ const Articles = () => {
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(true)
 
-
     useEffect(() => {
         populateArticleData();
     }, [])

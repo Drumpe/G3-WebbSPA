@@ -65,7 +65,7 @@ namespace webapi.Controllers
 		private List<Article> GetArticlesFromDatabase(bool ascending = true)
 		{
 			// Connection string for MySQL database
-			string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=!Blank1";
+			string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=password";
 
 			// SQL query to retrieve data from database
 			string sql = "SELECT title, summary, link, published, topic FROM news";
@@ -88,10 +88,8 @@ namespace webapi.Controllers
 							article.Summary = reader.GetString("summary");
 							article.Link = reader.GetString("link");
 							article.Published = reader.GetDateTime("published");
-							article.Topic = new List<string>(reader.GetString("topic").Split(", ").Distinct().ToList());
-                            articles.Add(article);
-
-
+							article.Topic = new List<string>(reader.GetString("topic").Split(','));
+							articles.Add(article);
 						}
 					}
 				}
