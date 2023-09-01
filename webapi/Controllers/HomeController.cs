@@ -24,56 +24,52 @@ namespace webapi.Controllers
 			_logger = logger;
 		}
 
+		/**
+		 * Index
+		 * topic: välj ämne
+		 * sortBy: newest | oldest
+		 * limit: hur många artiklar
+		 * from: med början från
+		 * Returns: Lista med artiklar 
+		 * Exempel: topic="All", sortBy = "newest", limit = "50", from = "100" returns: De nyaste artiklarna från 100 till 150  
+		 *		    Om inga invärden tillhandahålls returneras de 50 nyaste artiklarna
+		 */
 		[HttpGet]
-		public IActionResult Index(string topic = "", string sortBy = "", string limit = "50")
+		public IActionResult Index(string topic = "", string sortBy = "newest", string limit = "50", string from = "0")
 		{
-			// Get all articles from the database
-			List<Article> articles = GetArticlesFromDatabase();
-			if (topic == "All")
+			topic = topic.ToLower() == "all" ? "": topic; // 'All' översätts till tom sträng
+			bool ascending = sortBy == "oldest" ? true : false; //Fallande eller ökande
+			//Gör om 'string limit' till 'integer amount'
+			if (!int.TryParse(limit, out int amount)) //Om inte siffra => Error
 			{
-				topic = "";
-			} 
-			if (!string.IsNullOrEmpty(topic))
-			
-			{
-				articles = articles.Where(a => a.Topic.Contains(topic)).ToList();
+				return Ok(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 			}
-			switch (sortBy)
+			//Gör om 'string from' till 'integer start'
+			if (!int.TryParse(from, out int start)) //Om inte siffra => Error
 			{
-				case "newest":
-					articles = articles.OrderByDescending(a => a.Published).ToList();
-					break;
-				case "oldest":
-					articles = articles.OrderBy(a => a.Published).ToList();
-					break;
+				return Ok(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 			}
-			if (string.IsNullOrEmpty(limit))
+			_logger.LogInformation($"Debug: {ascending} {topic} {limit} {start}");
+			// Get articles from the database och returnera dem (SQL är bättre på att hantera listor än C# => detta är snabbast)
+			return Ok(GetArticlesFromDatabase(ascending, topic, amount, start));	
+		}
+
+		private List<Article> GetArticlesFromDatabase(bool ascending = true, string topic = "", int limit = 50, int start = 0)
+		{
+			// Connection string for MySQL database
+			string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=sommar";
+			string order = ascending ? "ASC" : "DESC";
+			string sql;
+
+			// SQL query to retrieve data from database
+			if (string.IsNullOrEmpty(topic))
 			{
-				return Ok(articles.Take(50).ToList()); //Standard 50
+				sql = $"SELECT title, summary, link, published, topic FROM news ORDER BY published {order} LIMIT {limit} OFFSET {start}";
 			}
 			else
 			{
-				if (int.TryParse(limit, out int amount)) //Borde kanske även kolla antalet...
-				{
-					return Ok(articles.Take(amount).ToList());
-				}
-				else
-				{
-					//Error! Inte en siffra.
-					return Ok(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-				}
+				sql = $"""SELECT title, summary, link, published, topic FROM news WHERE topic LIKE '%{topic}%' ORDER BY published {order} LIMIT {limit} OFFSET {start}""";
 			}
-			return Ok(articles.Take(1).ToList()); //Borde aldrig komma hit, då har någon ändrat i koden och gjort fel
-		}
-
-		private List<Article> GetArticlesFromDatabase(bool ascending = true)
-		{
-			// Connection string for MySQL database
-			string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=password";
-
-			// SQL query to retrieve data from database
-			string sql = "SELECT title, summary, link, published, topic FROM news";
-
 			// Create a list to hold Article objects
 			List<Article> articles = new List<Article>();
 

@@ -1,16 +1,11 @@
 import Theme from './Theme'
 import { setTopic } from '../../pages/Articles/redux/topicSortSlice';
-import { useDispatch } from '../../../../node_modules/react-redux/es/exports';
-
-
-
-
+import { useDispatch } from 'react-redux';
 
 function Navbar() {
 
     const dispatch = useDispatch();
-  
- 
+
     return (
         <nav className="navbar navbar-expand-lg border-bottom box-shadow">
 
@@ -19,15 +14,13 @@ function Navbar() {
                 <a className="navbar-brand" href="#">
 
                     <img src="/public/Images/Logo1.png" alt="Atlas Portal">
-                    
-                    </img>
 
+                    </img>
                 </a>
 
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <a className="nav-link" onClick={() => dispatch(setTopic("All"))}>Nyheter</a>
-
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" onClick={() => dispatch(setTopic("Idrott"))}>Sport</a>
@@ -43,36 +36,20 @@ function Navbar() {
                     </li>
 
                     <ul className="navbar-nav mr-auto">
-
-
-
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
                                 Fler Artiklar
-
                             </a>
-
-
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                              
-
                                 <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("SamhalleKonflikter"))}>Samhälle & Konflikter</a></dt>
-                            <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Miljo"))}>Miljö</a></dt>
+                                <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Miljo"))}>Miljö</a></dt>
                                 <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("LivsstilFritt"))}>Livsstil & Fritid</a></dt>
-                    <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Ekonomi"))}>Ekonomi</a></dt>
-
-
+                                <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Ekonomi"))}>Ekonomi</a></dt>
                             </div>
-
-
-                           
                         </li>
                     </ul>
-
                 </ul>
-
 
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
@@ -83,7 +60,6 @@ function Navbar() {
                             Logga in
                         </a>
                     </li>
-                    
                 </ul>
             </div>
 
@@ -92,5 +68,4 @@ function Navbar() {
         </nav>
     );
 }
-
 export default Navbar;
