@@ -250,12 +250,15 @@ footer::before {
     text-align: left;
 }
 
-.container-fluid {
-    flex: 1;
-    padding-bottom: 80px; /* Adjust this value based on your footer height */
-}
-
 
 .signup {
     align-content: baseline;
 }
+
+/* Custom button style with a new class name */
+.my-custom-button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+  
+}
+

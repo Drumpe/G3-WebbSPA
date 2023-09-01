@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+
 import React from 'react';
 import SignUp from '../SignUpNewsletter/signUp';
 
