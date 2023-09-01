@@ -35,7 +35,7 @@ namespace webapi.Controllers
 		 *		    Om inga invärden tillhandahålls returneras de 50 nyaste artiklarna
 		 */
 		[HttpGet]
-		public IActionResult Index(string topic = "", string sortBy = "newest", string limit = "50", string from = "0")
+		public IActionResult Index(string topic = "", string sortBy = "newest", string limit = "50", string from = "0", string searchFor = "")
 		{
 			topic = topic.ToLower() == "all" ? "": topic; // 'All' översätts till tom sträng
 			bool ascending = sortBy == "oldest" ? true : false; //Fallande eller ökande
@@ -49,12 +49,12 @@ namespace webapi.Controllers
 			{
 				return Ok(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 			}
-			_logger.LogInformation($"Debug: {ascending} {topic} {limit} {start}");
+			_logger.LogInformation($"Debug: {ascending} {topic} {limit} {start} {searchFor}");
 			// Get articles from the database och returnera dem (SQL är bättre på att hantera listor än C# => detta är snabbast)
-			return Ok(GetArticlesFromDatabase(ascending, topic, amount, start));	
+			return Ok(GetArticlesFromDatabase(ascending, topic, amount, start, searchFor));	
 		}
 
-		private List<Article> GetArticlesFromDatabase(bool ascending = true, string topic = "", int limit = 50, int start = 0)
+		private List<Article> GetArticlesFromDatabase(bool ascending = true, string topic = "", int limit = 50, int start = 0, string searchFor = "")
 		{
 			// Connection string for MySQL database
 			string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=sommar";
@@ -62,13 +62,19 @@ namespace webapi.Controllers
 			string sql;
 
 			// SQL query to retrieve data from database
-			if (string.IsNullOrEmpty(topic))
+			if (string.IsNullOrEmpty(topic) && string.IsNullOrEmpty(searchFor) ) //Inget topic eller sök
 			{
 				sql = $"SELECT title, summary, link, published, topic FROM news ORDER BY published {order} LIMIT {limit} OFFSET {start}";
 			}
-			else
-			{
+			else if (!string.IsNullOrEmpty(topic) && string.IsNullOrEmpty(searchFor)) //Topic men inget sök
+            {
 				sql = $"""SELECT title, summary, link, published, topic FROM news WHERE topic LIKE '%{topic}%' ORDER BY published {order} LIMIT {limit} OFFSET {start}""";
+			} else if (!string.IsNullOrEmpty(topic) && !string.IsNullOrEmpty(searchFor)) //Topic och sök
+			{
+				sql = $"""SELECT title, summary, link, published, topic FROM news WHERE topic LIKE '%{topic}%' AND (title LIKE '%{searchFor}%' OR summary LIKE '%{searchFor}%') ORDER BY published {order} LIMIT {limit} OFFSET {start}"""; 
+			} else //Inget topic men sök
+			{
+				sql = $"""SELECT title, summary, link, published, topic FROM news WHERE title LIKE '%{searchFor}%' OR summary LIKE '%{searchFor}%' ORDER BY published {order} LIMIT {limit} OFFSET {start}""";
 			}
 			// Create a list to hold Article objects
 			List<Article> articles = new List<Article>();
