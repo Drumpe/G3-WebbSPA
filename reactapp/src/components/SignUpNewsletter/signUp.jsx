@@ -1,5 +1,3 @@
-//import React from 'react';
-import '/public/css/footerstyle.css';
 import PopUp from './PopUp';
 import React, { useState } from 'react';
 
