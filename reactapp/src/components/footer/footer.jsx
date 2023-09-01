@@ -81,7 +81,7 @@ function Footer() {
                 </div>
             </div>
 
-                    <p>&#169; 2023 Grupp3 WebbNews Mjaumjau. All rights reserved.</p>
+            <p className="text-center">&#169; 2023 Grupp3 WebbNews Mjaumjau. All rights reserved.</p>
                 </div>          
             );
 }
