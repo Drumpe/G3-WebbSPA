@@ -17,10 +17,10 @@ const App = () => {
         <CookiesProvider>
             <Provider store={store}>
                 <Router>
-                    <div className="wrapper">
+                    <div className="container-fluid p-0 d-flex flex-column min-vh-100">
                 <Navbar />
                 
-                    <div className="container-fluid row mainPage">
+                        <div className="mainPage flex-grow-1">
                         <Routes>
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />

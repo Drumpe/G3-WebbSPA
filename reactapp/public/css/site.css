@@ -260,3 +260,11 @@ footer::before {
 .signup {
     align-content: baseline;
 }
+
+/* Custom button style with a new class name */
+.my-custom-button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+  
+}
+
