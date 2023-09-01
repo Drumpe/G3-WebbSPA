@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import '/public/css/footerstyle.css';
 import SignUp from '../SignUpNewsletter/signUp';
 
 
