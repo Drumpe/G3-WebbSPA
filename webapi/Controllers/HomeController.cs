@@ -57,7 +57,7 @@ namespace webapi.Controllers
 		private List<Article> GetArticlesFromDatabase(bool ascending = true, string topic = "", int limit = 50, int start = 0)
 		{
 			// Connection string for MySQL database
-			string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=sommar";
+			string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=password";
 			string order = ascending ? "ASC" : "DESC";
 			string sql;
 
