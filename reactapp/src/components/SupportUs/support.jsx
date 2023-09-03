@@ -1,5 +1,5 @@
 //import React from 'react';
-import '/public/css/footerstyle.css';
+import '/public/css/site.css';
 import { useState } from 'react';
 import SupportPopUp from './SupportPopUp';
 import "./support.css";
