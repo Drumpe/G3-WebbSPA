@@ -10,6 +10,7 @@ import Navbar from './components/Navbar/navbar';
 import ScrollToTop from './components/ScrollToTop/buttonScrollToTop';
 import { Provider } from 'react-redux';
 import store from './pages/Articles/redux/store';
+import SupportPopUp from './components/SupportUs/SupportPopUp';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
                         <Routes>
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />
+                            <Route path="/support-popup" element={<SupportPopUp />} />
                             <Route
                                 path="/mainPage"
                                 element={
