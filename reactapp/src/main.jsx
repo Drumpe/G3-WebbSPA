@@ -1,4 +1,3 @@
-import './index.css'
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { CookiesProvider } from 'react-cookie';
@@ -18,10 +17,11 @@ const App = () => {
     return (
         <CookiesProvider>
             <Provider store={store}>
-            <Router>
+                <Router>
+                    <div className="container-fluid p-0 d-flex flex-column min-vh-100">
                 <Navbar />
-                <div className="wrapper">
-                    <div className="container-fluid row mainPage">
+                
+                        <div className="mainPage flex-grow-1">
                         <Routes>
                             <Route path="/login" element={<Login />} />
                             <Route path="/register" element={<Register />} />

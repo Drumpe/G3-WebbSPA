@@ -1,22 +1,25 @@
 import { useEffect, useState } from 'react';
 import SelectsComponent from './components/select';
 import { selectedSorting, selectedTopic } from './redux/topicSortSlice';
+import { selectedSearchFor } from '../../components/Navbar/Search/SearchForSlice'
 import { useSelector } from 'react-redux';
 
 const Articles = () => {
     const [articles, setArticles] = useState([])
     const searchTopic = useSelector(selectedTopic);
     const sorting = useSelector(selectedSorting);
+    const searchFor = useSelector(selectedSearchFor);
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        console.log(searchTopic, sorting, searchFor)
         populateArticleData();
-    }, [searchTopic, sorting])
+    }, [searchTopic, sorting, searchFor])
 
     const populateArticleData = async () => {
         setLoading(true)
         const token = localStorage.getItem("token")
-        const response = await fetch(`/home?topic=${searchTopic}&sortBy=${sorting}`, { headers: { 'Authorization': `Bearer ${token}` } });
+        const response = await fetch(`/home?topic=${searchTopic}&sortBy=${sorting}&searchFor=${searchFor}`, { headers: { 'Authorization': `Bearer ${token}` } });
         const data = await response.json();
         setArticles(data)
         setLoading(false)

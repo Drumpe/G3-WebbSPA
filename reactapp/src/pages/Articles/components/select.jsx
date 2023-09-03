@@ -1,16 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setTopic, setSorting, selectedSorting, selectedTopic } from '../redux/topicSortSlice';
+import { setSorting, selectedSorting} from '../redux/topicSortSlice';
 
 const SelectsComponent = () => {
-    const searchTopic = useSelector(selectedTopic);
     const sorting = useSelector(selectedSorting);
     const dispatch = useDispatch();
-    const topics = ["All", "Politik", "Utbildning", "Religion", "Miljo", "Ekonomi", "LivsstilFritt", "SamhalleKonflikter", "Halsa", "Idrott", "VetenskapTeknik"]
-
-    const handleTopicChange = (e) => {
-        const selectedTopic = e.target.value;
-        dispatch(setTopic(selectedTopic));
-    };
 
     const handleSortingChange = (e) => {
         const selectedSorting = e.target.value;
@@ -21,8 +14,8 @@ const SelectsComponent = () => {
         <div>
             <label htmlFor="sorting">Sort:</label>
             <select id="sorting" name="sorting" value={sorting} onChange={handleSortingChange}>
-                <option value="newest" selected>Newest</option>
-                <option value="oldest" selected>Oldest</option>
+                <option value="newest" selected>Nya</option>
+                <option value="oldest" selected>Äldre</option>
             </select>
         </div>
     );

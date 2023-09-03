@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
+
 import React from 'react';
-import '/public/css/footerstyle.css';
 import SignUp from '../SignUpNewsletter/signUp';
 import SupportUs from '../SupportUs/support';
 
@@ -80,7 +79,7 @@ function Footer() {
                 </div>
             </div>
 
-                    <p>&#169; 2023 Grupp3 WebbNews Mjaumjau. All rights reserved.</p>
+            <p className="text-center">&#169; 2023 Grupp3 WebbNews Mjaumjau. All rights reserved.</p>
                 </div>          
             );
 }

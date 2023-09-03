@@ -118,31 +118,153 @@ a {
 /* Rest of your existing styles */
 
 
-/* Detta gör inget / ATTHAPHON */ 
-/*.login-box {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+
+
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%; /* Adjust the width value as needed */
 }
 
-    .login-box input {
-        width: 93.5%;
-        margin-bottom: 10000px;
-        padding: 8px;
-    }
 
-    .login-box button {
-        width: 100%;
-        padding: 8px;
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-        border: outset;
-        cursor: pointer;
-    }
-
-main.mainclass {
+.footer {
+    flex-shrink: 0;
     background-color: var(--primary-color);
-    padding-top: 1.5rem;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
-*/
+
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--secondary-color);
+}
+
+.footer-nav-headline {
+    color: var(--secondary-color) !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+}
+
+    .footer-nav-headline:after {
+        content: "";
+        position: absolute;
+        background-color: var(--secondary-color);
+        height: 0.2em;
+        width: 0;
+        left: 0;
+        bottom: -5px;
+        transition: 0.3s;
+    }
+
+    .footer-nav-headline:hover {
+        color: var(--secondary-color);
+        font-weight: bold;
+    }
+
+        .footer-nav-headline:hover:after {
+            width: 100%;
+        }
+
+.signup-text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    margin: 0;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+
+.btn-footer {
+    background-color: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin: 0 15px;
+    border-radius: 50px;
+    padding: 1px 20px;
+    transition: 0.4s;
+}
+
+.bf-1 {
+    background-color: rgb(180, 200, 214);
+}
+
+    .bf-1:hover {
+        background-color: rgb(199, 196, 166);
+    }
+
+.bf-2 {
+    background-color: var(--button-color);
+}
+
+    .bf-2:hover {
+        background-color: rgb(165, 190, 207);
+        color: var(--button-text-color);
+    }
+
+
+.footer-box-el {
+    color: var(--secondary-color) !important;
+    text-decoration: none;
+}
+
+.elemento1 {
+    content: "";
+    display: block;
+    width: 80%;
+    border-top: 1px solid var(--secondary-color);
+    margin: 0 auto;
+}
+
+.secondary-footer {
+    color: var(--secondary-color);
+    padding-top: 3rem;
+    padding-left: 1rem;
+}
+
+.dt-el {
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+    .dt-el:hover {
+        font-size: 1rem;
+    }
+
+.gridfooter {
+    text-align: left;
+}
+
+.container-fluid {
+    
+    padding-bottom: 80px; /* Adjust this value based on your footer height */
+}
+
+
+.signup {
+    align-content: baseline;
+}
+
+/* Custom button style with a new class name */
+.my-custom-button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+  
+}
+

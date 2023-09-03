@@ -1,11 +1,15 @@
 // store.js
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import topicSortReducer from './topicSortSlice';
+import searchForReducer from '../../../components/Navbar/Search/SearchForSlice'
+
+const rootReducer = combineReducers({
+    topicSort: topicSortReducer,
+    searchFor: searchForReducer,
+})
 
 const store = configureStore({
-    reducer: {
-        topicSort: topicSortReducer,
-    },
+    reducer: rootReducer,
 });
 
 export default store;

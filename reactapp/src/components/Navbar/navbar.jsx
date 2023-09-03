@@ -1,6 +1,8 @@
 import Theme from './Theme'
 import { setTopic } from '../../pages/Articles/redux/topicSortSlice';
 import { useDispatch } from 'react-redux';
+import Logout from '../Logout';
+import SearchBox from './Search/searchBox'
 
 function Navbar() {
 
@@ -50,15 +52,15 @@ function Navbar() {
                         </li>
                     </ul>
                 </ul>
+                <SearchBox />
 
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <a
-                            href="/Login"
-                            className="nav-link"
-                        >
-                            Logga in
-                        </a>
+
+
+                    <Logout/>
+                        
+                        
                     </li>
                 </ul>
             </div>
