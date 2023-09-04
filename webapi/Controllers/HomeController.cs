@@ -30,6 +30,7 @@ namespace webapi.Controllers
 		 * sortBy: newest | oldest
 		 * limit: hur många artiklar
 		 * from: med början från
+		 * searchFor: om sträng finns i titel eller summary kommer artikeln med. Om tom sträng gör den ingen skillnad.
 		 * Returns: Lista med artiklar 
 		 * Exempel: topic="All", sortBy = "newest", limit = "50", from = "100" returns: De nyaste artiklarna från 100 till 150  
 		 *		    Om inga invärden tillhandahålls returneras de 50 nyaste artiklarna
