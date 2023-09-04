@@ -11,11 +11,11 @@ const PopUp = ({ isOpen, onClose, onSubmit }) => {
 
     return (
         <div className={popupClassName}>
-            <button className="btn-footer bf-1" onClick={onClose}>
+            <button className="btn-popup bf-1 top-5 end-5" onClick={onClose}>
                 Close
             </button>
             <form>
-                <label>
+                <label className="label-popup">
                     Email:
                     <input
                         type="email"
@@ -24,7 +24,7 @@ const PopUp = ({ isOpen, onClose, onSubmit }) => {
                         required
                     />
                 </label>
-                <button type="submit" className="btn-footer bf-1" onClick={onSubmit}>Register</button>
+                <button type="submit" className="btn-footer bf-1 end-5" onClick={onSubmit}>Register</button>
             </form>
         </div>
     );
