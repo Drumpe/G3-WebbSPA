@@ -53,8 +53,8 @@
 /* Styling for the additional content */
 .additional-content {
     padding: 20px;
+   
     opacity: 0.85;
-    background-color: black;
     border-radius: 5px;
     margin-top: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -71,13 +71,15 @@
 .additional-content h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color:white;
+    --primary-color: #ffffff;
+    --secondary-color: #05091be1;
 }
 
-    .additional-content p {
-        font-size: 16px;
-        margin-bottom: 10px;
-        color:white;
-    }
+.additional-content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    --primary-color: #ffffff;
+    --secondary-color: #05091be1;
+}
 
 
