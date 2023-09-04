@@ -30,15 +30,6 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-textarea, input[type="email"] {
-    width: 70%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-family: Arial, sans-serif;
-    background-color: #b3d0e2;
-}
 
 textarea {
     height: 100px;

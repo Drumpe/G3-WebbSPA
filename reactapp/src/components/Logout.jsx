@@ -6,20 +6,23 @@ const Logout = () => {
     const [, , removeCookie] = useCookies();
     const navigate = useNavigate();
 
+ 
+
 
     const handleLogout = () => {
 
         removeCookie('session', { path: '/' })
         localStorage.removeItem('token');
         navigate('/login');
+        setIsLoggedIn(false); // Update the login status on logout
     };
 
     return (
         <button
             onClick={handleLogout}
-            className="nav-link btn-link my-custom-button"
+            className="nav-link btn-link dark-theme-button" 
         >
-            Logout
+            Logga in
         </button>
     );
 };

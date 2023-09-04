@@ -11,8 +11,8 @@ const SelectsComponent = () => {
     };
 
     return (
-        <div>
-            <label htmlFor="sorting">Sort:</label>
+        <div style={{ marginBottom: '15px' }}>
+            <label htmlFor="sorting">Sortera:</label>
             <select id="sorting" name="sorting" value={sorting} onChange={handleSortingChange}>
                 <option value="newest" selected>Nya</option>
                 <option value="oldest" selected>Äldre</option>

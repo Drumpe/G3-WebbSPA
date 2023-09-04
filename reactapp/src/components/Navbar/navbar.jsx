@@ -11,16 +11,10 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg border-bottom box-shadow">
 
+            <Theme />
             <div className="container navcontainer">
 
-                <a className="navbar-brand" href="#">
-
-                    <img src="/public/Images/Logo1.png" alt="Atlas Portal">
-
-                    </img>
-                </a>
-
-                <ul className="navbar-nav mr-auto">
+                <ul className="navbar-nav mx-auto">
                     <li className="nav-item">
                         <a className="nav-link" onClick={() => dispatch(setTopic("All"))}>Nyheter</a>
                     </li>
@@ -52,20 +46,19 @@ function Navbar() {
                         </li>
                     </ul>
                 </ul>
-                <SearchBox />
 
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-
-
-                    <Logout/>
-                        
-                        
+                        <SearchBox />
+                    </li>
+                    <li className="nav-item" style={{ marginLeft: '60px', marginTop: '11px'}}>
+                        <Logout />
                     </li>
                 </ul>
+                
             </div>
 
-            <Theme />
+           
 
         </nav>
     );
