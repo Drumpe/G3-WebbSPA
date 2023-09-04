@@ -9,6 +9,7 @@
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
+    background-color: var(--primary-color);
 }
 
 .show {
@@ -18,9 +19,36 @@
 /* Close button styles */
 .close-button {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 15px;
+    right: 15px;
     background: none;
     border: none;
     cursor: pointer;
+}
+
+.btn-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin: 0 15px 15px 0;
+    border-radius: 50px;
+    padding: 1px 20px;
+    transition: 0.4s;
+}
+
+.label-popup {
+    margin: 30px;
+}
+
+.input-popup {
+    margin: 30px;
 }
