@@ -15,6 +15,9 @@ const PopUp = ({ isOpen, onClose, onSubmit }) => {
                 Close
             </button>
             <form>
+                <p className="infotext-popup">
+                <br />
+                    Hej, signa upp med din email så får du massa goa nyhetsbrev:</p>
                 <label className="label-popup">
                     Email:
                     <input
