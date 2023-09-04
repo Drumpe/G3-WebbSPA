@@ -8,6 +8,7 @@
 
 /* Styling for the futuristic content */
 .futuristic-content {
+    opacity:0.85;
     position: relative;
     max-width: 100%;
     height: 0;
@@ -52,7 +53,8 @@
 /* Styling for the additional content */
 .additional-content {
     padding: 20px;
-    background-color: #ffffff;
+    opacity: 0.85;
+    background-color: black;
     border-radius: 5px;
     margin-top: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -69,13 +71,13 @@
 .additional-content h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    color: black;
+    color:white;
 }
 
     .additional-content p {
         font-size: 16px;
         margin-bottom: 10px;
-        color: black;
+        color:white;
     }
 
 

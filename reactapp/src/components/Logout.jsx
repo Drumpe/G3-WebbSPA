@@ -22,7 +22,7 @@ const Logout = () => {
             onClick={handleLogout}
             className="nav-link btn-link dark-theme-button" 
         >
-            Login
+            Logga in
         </button>
     );
 };

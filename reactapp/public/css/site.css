@@ -28,6 +28,9 @@ html {
     color: var(--secondary-color);
 }
 
+.nav-link {
+    cursor: pointer; /* Change cursor to a pointer on hover */
+}
 
 a {
     color: var(--secondary-color);
@@ -57,9 +60,6 @@ a {
     color: var(--secondary-color);
     font-weight: bold;
 }
-
-
-
 
 /* Korten */
 .card {
@@ -91,6 +91,7 @@ a {
 
 /* Style for the dropdown items */
 .dropdown-item-custom {
+    cursor: pointer; /* Change cursor to a pointer on hover */
     color: var(--secondary-color);
     padding: 0.5rem 1rem;
     clear: both;
@@ -100,15 +101,13 @@ a {
     display: block; /* Display the items as blocks to occupy the full width */
 }
 
-    /* Hover and focus styles for dropdown items */
     .dropdown-item-custom:hover,
     .dropdown-item-custom:focus {
         text-decoration: none;
-        background-color:lightskyblue;
-        opacity:0.8
-        ;
-      
+        background-color: lightskyblue;
+        opacity: 0.8; /* Add a semicolon here */
     }
+
 
 /* Show the dropdown menu when hovering the parent */
 .navbar-nav .nav-item.dropdown:hover .dropdown-menu {

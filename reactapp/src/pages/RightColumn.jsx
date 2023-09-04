@@ -12,7 +12,7 @@ export default class RightColumn extends Component {
                     <div className="text-overlay">
                         <p>Explore the unknown, push boundaries, and shape tomorrow.</p>
                         <a href="https://www.marvel.com/" target="_blank" rel="noopener noreferrer" className="btn btn-info">
-                            Learn more
+                            Läs mer
                         </a>
                     </div>
                 </div>
@@ -20,9 +20,16 @@ export default class RightColumn extends Component {
                     <img src="/public/Images/Sem.jpg" alt="Discover More" className="additional-image" />
                     <h3>Vacaction for just 1$</h3>
                     <p>Check out our latest destinations and much more</p>
-                    <a href="https://www.ticket.se/" target="_blank" rel="noopener noreferrer" className="btn btn-info">
-                        Explore
+                    <a
+                        href="https://www.ticket.se/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-info"
+                        style={{marginLeft:'125px', width: '75px' }} // Adjust the width as needed
+                    >
+                        Utforska
                     </a>
+
                 </div>
                 </div>
 
