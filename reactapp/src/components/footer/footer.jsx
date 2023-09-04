@@ -1,7 +1,7 @@
 
 import React from 'react';
 import SignUp from '../SignUpNewsletter/signUp';
-
+import SupportUs from '../SupportUs/support';
 
 function Footer() {
 
@@ -69,11 +69,10 @@ function Footer() {
                             <dt className="dt-el"><a href="https://twitter.com/" className="footer-box-el smaller">Twitter</a></dt>
                         </div>
 
+                       
+
                         <div className="col">
-                            <h2 className="support-h2">Support us!</h2>
-                            <a href="src/components/SupportUs/support.html">
-                                <button id="supportbutton" className="btn-footer bf-2">Support us</button>
-                            </a>
+                            <SupportUs />
                         </div>
                     </div>
 
