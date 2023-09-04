@@ -174,6 +174,11 @@ function WeatherComponent() {
 
     const [searchInput, setSearchInput] = useState('');
 
+    const SearchWithEnterKey = (e) => {
+        if (e.key === 'Enter')
+            handleSearchInput();
+    }
+
     const handleSearchInput = () => {
 
         const searchCity = searchInput.trim();
@@ -207,6 +212,8 @@ function WeatherComponent() {
                     value={searchInput}
 
                     onChange={(e) => setSearchInput(e.target.value)}
+
+                    onKeyDown={SearchWithEnterKey}
 
                     placeholder="Sök på en stad"
 
