@@ -47,10 +47,10 @@ function Navbar() {
                     </ul>
                 </ul>
 
-                <ul className="navbar-nav ml-auto">
-                    <li className="nav-item">
+                <ul className="navbar-nav ml-auto no-underline">
+                    <div className="nav-item">
                         <SearchBox />
-                    </li>
+                    </div>
                     <li className="nav-item" style={{ marginLeft: '60px', marginTop: '11px'}}>
                         <Logout />
                     </li>

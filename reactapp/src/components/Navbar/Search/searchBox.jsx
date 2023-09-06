@@ -13,9 +13,9 @@ const SearchBox = () => {
     };
 
     return (
-        <div className="mr-auto navbar-nav">
+        <div className="mr-auto navbar-nav no-underline">
             <input
-                className="search-input "
+                className="search-input no-underline "
                 type="text"
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
