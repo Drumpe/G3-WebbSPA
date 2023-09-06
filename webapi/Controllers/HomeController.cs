@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Duende.IdentityServer.Extensions;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
 using MySqlConnector;
+using Org.BouncyCastle.Asn1.X509;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,6 +20,11 @@ namespace webapi.Controllers
 	{
 		private readonly ILogger<HomeController> _logger;
 		private IList<Article> _articles;
+
+		// Connection string for MySQL database - global in HomeController used in 3 functions
+		string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=sommar"; 
+		//string connStr = "server=db-g3.cj6tuuscsywt.us-east-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=password"; //Bobbys AWS DB
+		//string connStr = "server=aws-newsfeeddb.ci1dhftr505s.eu-north-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=N.LLJMFw52n#i}d"; //Olas AWS DB
 
 		public HomeController(ILogger<HomeController> logger)
 		{
@@ -50,17 +57,13 @@ namespace webapi.Controllers
 			{
 				return Ok(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 			}
-			_logger.LogInformation($"Debug: {ascending} {topic} {limit} {start} {searchFor}");
+			_logger.LogInformation("Index DEBUG: {ascending} {topic} {limit} {start} {searchFor}", ascending, topic, limit, start, searchFor);
 			// Get articles from the database och returnera dem (SQL är bättre på att hantera listor än C# => detta är snabbast)
 			return Ok(GetArticlesFromDatabase(ascending, topic, amount, start, searchFor));	
 		}
 
 		private List<Article> GetArticlesFromDatabase(bool ascending = true, string topic = "", int limit = 50, int start = 0, string searchFor = "")
 		{
-			// Connection string for MySQL database 
-			string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=sommar"; 
-			//string connStr = "server=db-g3.cj6tuuscsywt.us-east-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=password"; //Bobbys AWS DB
-			//string connStr = "server=aws-newsfeeddb.ci1dhftr505s.eu-north-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=N.LLJMFw52n#i}d"; //Olas AWS DB
 			string order = ascending ? "ASC" : "DESC";
 			string sql;
 
@@ -101,10 +104,65 @@ namespace webapi.Controllers
 							articles.Add(article);
 						}
 					}
+					conn.Close();
 				}
 			}
 			return articles;
 		}
+
+		[HttpPost("SubmitEmail")]
+		public IActionResult SubmitEmail(string email)
+		{
+			if (!email.IsNullOrEmpty() && email.Contains('@'))
+            {
+				//Borde kontrollera längden på email och andra saker
+				int affectedRows = 0;
+				string sql = $"INSERT INTO newsletter (NewsLetter_email) VALUES ('{email}')";
+				using (MySqlConnection conn = new MySqlConnection(connStr))
+				{
+					using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+					{
+						conn.Open();
+						affectedRows = cmd.ExecuteNonQuery();
+						conn.Close() ;
+					}
+				}
+				if(affectedRows == 1) {
+					_logger.LogInformation("SubmitEmail INSERTED {email}", email);
+					return Ok();
+				}
+				_logger.LogInformation("SubmitEmail DEBUG: {email}", email);
+			}
+			return Ok(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+		}
+
+		[HttpPost("SubmitSupport")]
+		public IActionResult SubmitSupport(string name, string email, string supporttext)
+		{
+			if (!name.IsNullOrEmpty() && !email.IsNullOrEmpty() && email.Contains('@') && !supporttext.IsNullOrEmpty())
+			{
+				//Borde kontrollera längden på strängarna och andra saker
+				int affectedRows = 0;
+				string sql = $"INSERT INTO support (support_name, support_email, support_comment) VALUES ('{name}', '{email}', '{supporttext}')";
+				using (MySqlConnection conn = new MySqlConnection(connStr))
+				{
+					using (MySqlCommand cmd = new MySqlCommand(sql, conn))
+					{
+						conn.Open();
+						affectedRows = cmd.ExecuteNonQuery();
+						conn.Close();
+					}
+				}
+				if (affectedRows == 1)
+				{
+					_logger.LogInformation("SubmitSupport INSERTED {name} {email} {supporttext}", name, email, supporttext);
+					return Ok();
+				}
+				_logger.LogInformation("SubmitSupport DEBUG: name: {name} email: {email} st: {supporttext}", name, email, supporttext);
+			}
+			return Ok(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+		}
+
 		[HttpGet("Privacy")]
 		public IActionResult Privacy()
 		{

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 
 const SignUp = () => {
-
+    const [email, setEmail] = useState('');
     const [isPopupOpen, setIsPopupOpen] = useState(false);
 
     const openPopup = () => {
@@ -17,6 +17,13 @@ const SignUp = () => {
 
     const handleEmailSubmit = () => {
         // Simulate email registration
+        
+        const token = localStorage.getItem("token")
+        fetch(`/home/SubmitEmail?email=${email}`,
+            {
+                method: 'POST',
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
         <p>Thank you for signing up!</p>
         closePopup();
     };
@@ -27,7 +34,7 @@ const SignUp = () => {
             <button type="registerButton" className="btn-footer bf-2" onClick={openPopup}>
                 Signup!
             </button>
-            <PopUp isOpen={isPopupOpen} onClose={closePopup} onSubmit={handleEmailSubmit} />
+            <PopUp isOpen={isPopupOpen} onClose={closePopup} onSubmit={handleEmailSubmit} email={email} setEmail={setEmail} />
 
             </div>
     );

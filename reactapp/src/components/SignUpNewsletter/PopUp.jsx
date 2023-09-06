@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './PopUp.css';
 
 
-const PopUp = ({ isOpen, onClose, onSubmit }) => {
-    const [email, setEmail] = useState('');
+const PopUp = ({ isOpen, onClose, onSubmit, email, setEmail }) => {
+
     const popupClassName = isOpen ? 'popup-overlay show' : 'popup-overlay';
 
 
