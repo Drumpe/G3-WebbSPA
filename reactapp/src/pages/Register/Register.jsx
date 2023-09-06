@@ -45,8 +45,8 @@ const Register = () => {
                                 <h2>Register</h2>
                                 <div className="input-container">
                                     <label className="input-label">Username:</label>
-                                    <input
-                                        className="input-field"
+                                    <input className="support_textarea"
+                                        className="support_textarea"
                                         type="text"
                                         value={username}
                                         onChange={(e) => setUsername(e.target.value)}
@@ -57,8 +57,8 @@ const Register = () => {
                                 <div>
                                     <div className="input-container">
                                         <label className="input-label">Email:</label>
-                                        <input
-                                            className="input-field"
+                                        <input className="support_textarea"
+                                            className="support_textarea"
                                             type="email"
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
@@ -67,8 +67,8 @@ const Register = () => {
                                     </div>
                                     <div className="input-container">
                                         <label className="input-label">Password:</label>
-                                        <input
-                                            className="input-field"
+                                        <input className="support_textarea"
+                                            className="support_textarea"
                                             type="password"
                                             value={password}
                                             onChange={(e) => setPassword(e.target.value)}

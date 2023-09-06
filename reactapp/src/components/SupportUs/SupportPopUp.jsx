@@ -38,10 +38,16 @@ const SupportPopUp = ({ isOpen, onClose }) => {
 
     const refAnimationInstance = useRef(null);
     const [intervalId, setIntervalId] = useState();
-
+    const [isSend, setIsSend] = useState(false);
     const getInstance = useCallback((instance) => {
         refAnimationInstance.current = instance;
     }, []);
+
+    const onBack = () => {
+        setIsSend(false);
+        onClose();
+        stopAnimation();
+    }
 
     const nextTickAnimation = useCallback(() => {
         if (refAnimationInstance.current) {
@@ -51,10 +57,17 @@ const SupportPopUp = ({ isOpen, onClose }) => {
     }, []);
 
     const startAnimation = useCallback(() => {
+        setIsSend(true)
         if (!intervalId) {
             setIntervalId(setInterval(nextTickAnimation, 400));
         }
     }, [intervalId, nextTickAnimation]);
+
+    const stopAnimation = useCallback(() => {
+        clearInterval(intervalId);
+        setIntervalId(null);
+        refAnimationInstance.current && refAnimationInstance.current.reset();
+    }, [intervalId]);
 
     useEffect(() => {
         return () => {
@@ -66,30 +79,34 @@ const SupportPopUp = ({ isOpen, onClose }) => {
 
     return (
         <div className={popupClassName}>
-            <div className="container_2">
-                <div className="content_2">
-                    <h1>Thank You for Your Support</h1>
-                    <p className="logo">✅</p>
-                    <h2>Fill in your information</h2>
-                    <form>
-                        <label htmlFor="name">Name:</label>
-                        <input type="text" id="name" name="name" required />
-                        <br /><br />
-                        <label htmlFor="email">Email:</label>
-                        <input type="email" id="email" name="email" required />
-                        <br /><br />
-                        <label htmlFor="message">Message for Support:</label>
-                        <textarea id="message" name="message" required></textarea>
-                        <br /><br /><br />
+            <div className="support_container">
+                <div className="support_content">
 
+                    <div className="supportheader">
+                        <h1 className="support_h1">Thanks</h1>
+                        <p className="support_logo">✅</p>
+                        <h2 className="support_h2">Fill in your information</h2>
+                    </div>
+                    {!isSend &&
+                        <div className="supportbody">
+                            <form className="support_form">
+                                <label className="support_label" htmlFor="name">Name:</label>
+                                <input className="support_textarea" type="text" id="name" name="name" required />
+                                <br /><br />
+                                <label className="support_label" htmlFor="email">Email:</label>
+                                <input className="support_textarea" type="email" id="email" name="email" required />
+                                <br /><br />
+                                <label className="support_label" htmlFor="message">Message for Support:</label>
+                                <textarea className="support_textarea" id="message" name="message" required></textarea>
+                            </form>
+                        </div>}
+                    <br /><br /><br />
+
+                    <div className="supportfooter">
                         <button className="btn-footer bf-1" onClick={startAnimation}>Send</button>
-
-                        <button type="reset" className="btn-footer bf-1">Reset</button>
-
-                        <button className="btn-footer bf-1" onClick={onClose}> Back Home </button>
-
-                        
-                    </form>
+                        <button type="reset" className="btn-footer bf-1" onClick={stopAnimation}>Reset</button>
+                        <button className="btn-footer bf-1" onClick={onBack}> Back Home </button>
+                    </div>
                 </div>
             </div>
             <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
