@@ -46,7 +46,7 @@ a {
 
 .navbar ul li :hover {
     color: var(--secondary-color);
-    /* border-bottom: solid 2px #999; // Lade till linje under sök, inte ok. */
+    border-bottom: solid 2px #999;
 }
 
 .navbar-brand img {
