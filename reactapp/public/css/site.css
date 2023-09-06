@@ -32,6 +32,8 @@ html {
     cursor: pointer; /* Change cursor to a pointer on hover */
 }
 
+
+
 a {
     color: var(--secondary-color);
 }
@@ -114,19 +116,7 @@ a {
     display: block;
 }
 
-/* Rest of your existing styles */
 
-
-
-
-
-.wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%; /* Adjust the width value as needed */
-}
 
 
 .footer {
@@ -267,3 +257,8 @@ footer::before {
   
 }
 
+
+.no-underline:hover {
+    text-decoration: none !important;
+    color: black !important;
+}
