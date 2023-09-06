@@ -1,16 +1,18 @@
 .input-container {
     margin-bottom: 10px;
+
 }
 
 /* Style for input labels */
 .input-label {
- 
+    --primary-color: #05091be1;
+    --secondary-color: #fff;
     font-weight: bold;
     font-size: 12.5px; /* Adjust the font size as needed */
 }
 
 /* Style for input fields */
-.input-field {
+.input-field { 
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -42,12 +44,12 @@
 }
 
 
-/* Rest of your existing CSS rules... */
+
 
 
 /* Adjust margin-top for registration container */
 .card.registration-container {
-    background-color: rgba(255, 255, 255, 0.8);
+  
     padding: 20px;
     border-radius: 10px;
     display: flex;

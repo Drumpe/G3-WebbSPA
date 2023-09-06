@@ -50,8 +50,8 @@
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
-input[type="text"],
-support_textarea, input[type="email"] {
+
+support_textarea {
     width: 100%;
     padding: 5px;
     border: 1px solid #ccc;

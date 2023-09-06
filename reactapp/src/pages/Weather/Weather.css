@@ -1,5 +1,5 @@
 .weather-card {
-    margin-top: 67px;
+    margin-top: 37px;
     text-align: center;
     flex-direction: column;
     font-family: 'Batang'
@@ -25,13 +25,13 @@
     border: 3px solid #636262;
 }
 
+
 .search-btn {
-    width: 35px;
-    height: 44px;
-    cursor: pointer;
-    background-color: var(--primary-color);
-    border: 0;
+    background: transparent; /* Set the background color to transparent */
+    border: none; /* Remove the border */
+    cursor: pointer; /* Change the cursor to a pointer on hover (optional) */
 }
+
 
 .search-btn-img {
     width: 25px;
