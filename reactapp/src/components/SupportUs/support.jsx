@@ -1,5 +1,5 @@
 //import React from 'react';
-import '/public/css/site.css';
+
 import { useState } from 'react';
 import SupportPopUp from './SupportPopUp';
 import "./support.css";
@@ -26,7 +26,7 @@ const SupportUs = () => {
     return (
         <div style={{ display: 'block', padding: 30 }}>
             <h2 className="support-h2">Support Us!</h2>
-            <button type="SupportButton" className="btn-footer bf-2" onClick={openPopup}>
+            <button type="submit" className="btn-footer bf-2" onClick={openPopup}>
                Support Us
             </button>
             <SupportPopUp isOpen={isPopupOpen} onClose={closePopup} onSubmit={handleSupportSubmit} />
