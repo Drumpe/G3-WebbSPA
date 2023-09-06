@@ -186,6 +186,7 @@ function WeatherComponent() {
         if (searchCity) {
 
             fetchWeatherData(null, null, searchCity);
+            setSearchInput('');
 
         } else {
 
