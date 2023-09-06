@@ -91,10 +91,10 @@ const SupportPopUp = ({ isOpen, onClose }) => {
                         <div className="supportbody">
                             <form className="support_form">
                                 <label className="support_label" htmlFor="name">Name:</label>
-                                <input type="text" id="name" name="name" required />
+                                <input className="support_textarea" type="text" id="name" name="name" required />
                                 <br /><br />
                                 <label className="support_label" htmlFor="email">Email:</label>
-                                <input type="email" id="email" name="email" required />
+                                <input className="support_textarea" type="email" id="email" name="email" required />
                                 <br /><br />
                                 <label className="support_label" htmlFor="message">Message for Support:</label>
                                 <textarea className="support_textarea" id="message" name="message" required></textarea>

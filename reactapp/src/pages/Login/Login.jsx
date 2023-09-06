@@ -54,7 +54,7 @@ const Login = () => {
                                         <form onSubmit={handleSubmit}>
                                             <div className="col-md-12 mb-3">
                                                 <label style={{ fontWeight: 'bold', marginBottom: '2px', display: 'block' }}>Username:</label>
-                                                <input
+                                                <input className="support_textarea" 
                                                     type="text"
                                                     value={username}
                                                     onChange={(e) => setUsername(e.target.value)}
@@ -63,7 +63,7 @@ const Login = () => {
                                             </div>
                                             <div className="col-md-12 mb-3">
                                                 <label style={{ fontWeight: 'bold', marginBottom: '2px', display: 'block' }}>Password:</label>
-                                                <input
+                                                <input className="support_textarea" 
                                                     type="password"
                                                     value={password}
                                                     onChange={(e) => setPassword(e.target.value)}
