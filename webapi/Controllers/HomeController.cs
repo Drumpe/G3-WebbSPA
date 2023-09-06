@@ -57,8 +57,10 @@ namespace webapi.Controllers
 
 		private List<Article> GetArticlesFromDatabase(bool ascending = true, string topic = "", int limit = 50, int start = 0, string searchFor = "")
 		{
-			// Connection string for MySQL database
-			string connStr = "server=aws-newsfeeddb.ci1dhftr505s.eu-north-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=N.LLJMFw52n#i}d";
+			// Connection string for MySQL database 
+			string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=sommar"; 
+			//string connStr = "server=db-g3.cj6tuuscsywt.us-east-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=password"; //Bobbys AWS DB
+			//string connStr = "server=aws-newsfeeddb.ci1dhftr505s.eu-north-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=N.LLJMFw52n#i}d"; //Olas AWS DB
 			string order = ascending ? "ASC" : "DESC";
 			string sql;
 
@@ -101,7 +103,6 @@ namespace webapi.Controllers
 					}
 				}
 			}
-
 			return articles;
 		}
 		[HttpGet("Privacy")]
