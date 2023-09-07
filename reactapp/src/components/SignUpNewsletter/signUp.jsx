@@ -25,7 +25,9 @@ const SignUp = () => {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
         <p>Thank you for signing up!</p>
-        closePopup();
+
+            closePopup();
+
     };
 
     return (

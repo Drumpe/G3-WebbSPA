@@ -22,9 +22,9 @@ namespace webapi.Controllers
 		private IList<Article> _articles;
 
 		// Connection string for MySQL database - global in HomeController used in 3 functions
-		string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=sommar"; 
+		//string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=sommar"; 
 		//string connStr = "server=db-g3.cj6tuuscsywt.us-east-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=password"; //Bobbys AWS DB
-		//string connStr = "server=aws-newsfeeddb.ci1dhftr505s.eu-north-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=N.LLJMFw52n#i}d"; //Olas AWS DB
+		string connStr = "server=aws-newsfeeddb.ci1dhftr505s.eu-north-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=N.LLJMFw52n#i}d"; //Olas AWS DB
 
 		public HomeController(ILogger<HomeController> logger)
 		{
