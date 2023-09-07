@@ -157,6 +157,7 @@ footer::before {
     .footer-nav-headline:hover {
         color: var(--secondary-color);
         font-weight: bold;
+        cursor: pointer;
     }
 
         .footer-nav-headline:hover:after {

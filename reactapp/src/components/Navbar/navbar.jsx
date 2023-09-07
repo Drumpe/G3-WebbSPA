@@ -40,8 +40,10 @@ function Navbar() {
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("SamhalleKonflikter"))}>Samhälle & Konflikter</a></dt>
                                 <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Miljo"))}>Miljö</a></dt>
-                                <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("LivsstilFritt"))}>Livsstil & Fritid</a></dt>
+                                <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Halsa"))}>Hälsa</a></dt>
                                 <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Ekonomi"))}>Ekonomi</a></dt>
+                                <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Politik"))}>Politik</a></dt>
+                                <dt className="col"><a className="dropdown-item-custom" onClick={() => dispatch(setTopic("Utbildning"))}>Utbildning</a></dt>
                             </div>
                         </li>
                     </ul>
@@ -51,14 +53,14 @@ function Navbar() {
                     <div className="nav-item">
                         <SearchBox />
                     </div>
-                    <li className="nav-item" style={{ marginLeft: '60px', marginTop: '11px'}}>
+                    <li className="nav-item" style={{ marginLeft: '60px', marginTop: '11px' }}>
                         <Logout />
                     </li>
                 </ul>
-                
+
             </div>
 
-           
+
 
         </nav>
     );

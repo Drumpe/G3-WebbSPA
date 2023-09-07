@@ -1,29 +1,26 @@
-
 import React from 'react';
+import { setTopic } from '../../pages/Articles/redux/topicSortSlice';
+import { useDispatch } from 'react-redux';
 import SignUp from '../SignUpNewsletter/signUp';
 import SupportUs from '../SupportUs/support';
 
 function Footer() {
-
+    const dispatch2 = useDispatch();
     return (
 
         <div className="footer-container">
 
-
-
             <div className="footer-content">
 
-
                 <dl className="row m-0">
-                    <dt className="col"><a className="footer-nav-headline" href="?topic=Halsa&sortBy=">Hälsa</a></dt>
-                    <dt className="col"><a className="footer-nav-headline" href="?topic=SamhalleKonflikter&sortBy=">Samhälle & Konflikter</a></dt>
-                    <dt className="col"><a className="footer-nav-headline" href="?topic=Miljo&sortBy=">Miljö</a></dt>
-                    <dt className="col"><a className="footer-nav-headline" href="?topic=VetenskapTeknik&sortBy=">Vetenskap & Teknik</a></dt>
-                    <dt className="col"><a className="footer-nav-headline" href="?topic=LivsstillFritt&sortBy=">Livsstil & Fritid</a></dt>
-                    <dt className="col"><a className="footer-nav-headline" href="?topic=Ekonomi&sortBy=">Ekonomi</a></dt>
-                    <dt className="col"><a className="footer-nav-headline" href="?topic=Religion&sortBy=">Religion</a></dt>
-                    <dt className="col"><a className="footer-nav-headline" href="?topic=Idrott&sortBy=">Idrott</a></dt>
-
+                    <dt className="col"><a className="footer-nav-headline" onClick={() => dispatch2(setTopic("Halsa"))}>Hälsa</a></dt>
+                    <dt className="col"><a className="footer-nav-headline" onClick={() => dispatch2(setTopic("SamhalleKonflikter"))}>Samhälle & Konflikter</a></dt>
+                    <dt className="col"><a className="footer-nav-headline" onClick={() => dispatch2(setTopic("Miljo"))}>Miljö</a></dt>
+                    <dt className="col"><a className="footer-nav-headline" onClick={() => dispatch2(setTopic("VetenskapTeknik"))}>Vetenskap & Teknik</a></dt>
+                    <dt className="col"><a className="footer-nav-headline" onClick={() => dispatch2(setTopic("LivsstilFritt"))}>Livsstil & Fritid</a></dt>
+                    <dt className="col"><a className="footer-nav-headline" onClick={() => dispatch2(setTopic("Ekonomi"))}>Ekonomi</a></dt>
+                    <dt className="col"><a className="footer-nav-headline" onClick={() => dispatch2(setTopic("Religion"))}>Religion</a></dt>
+                    <dt className="col"><a className="footer-nav-headline" onClick={() => dispatch2(setTopic("Idrott"))}>Idrott</a></dt>
                 </dl>
             </div>
 
@@ -37,18 +34,18 @@ function Footer() {
 
                 <div className="gridfooter col col-sm-8">
 
-                            <div className="row">
-                                <div className="footer-box col">
-                                    <dl className="dl">
-                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Hjälp</a></dt>
-                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Klagomål</a></dt>
-                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Rättelse</a></dt>
-                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kontakta oss</a></dt>
-                                        <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kakor</a></dt>
+                    <div className="row">
+                        <div className="footer-box col">
+                            <dl className="dl">
+                                <dt className="dt-el"><a href="#" className="footer-box-el smaller">Hjälp</a></dt>
+                                <dt className="dt-el"><a href="#" className="footer-box-el smaller">Klagomål</a></dt>
+                                <dt className="dt-el"><a href="#" className="footer-box-el smaller">Rättelse</a></dt>
+                                <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kontakta oss</a></dt>
+                                <dt className="dt-el"><a href="#" className="footer-box-el smaller">Kakor</a></dt>
 
 
-                                    </dl>
-                                </div>
+                            </dl>
+                        </div>
 
                         <div className="footer-box col">
                             <dl className="dl">
@@ -69,8 +66,6 @@ function Footer() {
                             <dt className="dt-el"><a href="https://twitter.com/" className="footer-box-el smaller">Twitter</a></dt>
                         </div>
 
-                       
-
                         <div className="col">
                             <SupportUs />
                         </div>
@@ -80,8 +75,8 @@ function Footer() {
             </div>
 
             <p className="text-center">&#169; 2023 Grupp3 WebbNews Mjaumjau. All rights reserved.</p>
-                </div>          
-            );
+        </div>
+    );
 }
 
 export default Footer;
