@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './PopUp.css';
 
 
-const PopUp = ({ isOpen, onClose, onSubmit }) => {
-    const [email, setEmail] = useState('');
+const PopUp = ({ isOpen, onClose, onSubmit, email, setEmail }) => {
+
     const popupClassName = isOpen ? 'popup-overlay show' : 'popup-overlay';
 
 
@@ -17,7 +17,7 @@ const PopUp = ({ isOpen, onClose, onSubmit }) => {
             <form>
                 <p className="infotext-popup">
                 <br />
-                    Hej, signa upp med din email så får du massa goa nyhetsbrev:</p>
+                    Hej, signa upp med din email sÃ¥ fÃ¥r du massa goa nyhetsbrev:</p>
                 <label className="label-popup">
                     Email:
                     <input

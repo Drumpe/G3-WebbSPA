@@ -18,7 +18,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\components\ScrollToTop\" />
-    <Folder Include="src\components\SignUpNewsletter\" />
     <Folder Include="src\pages\Articles\redux\" />
     <Folder Include="src\pages\Register\" />
   </ItemGroup>

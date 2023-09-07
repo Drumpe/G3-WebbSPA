@@ -12,7 +12,7 @@ const Articles = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        console.log(searchTopic, sorting, searchFor)
+        //console.log(searchTopic, sorting, searchFor)
         populateArticleData();
     }, [searchTopic, sorting, searchFor])
 
@@ -34,6 +34,7 @@ const Articles = () => {
 
     const renderArticlesCards = () => {
 
+        //Formaterar datestring till hur vi vill ha det.
         function formatDate(dateString) {
             const date = new Date(dateString);
             const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: false };
@@ -41,6 +42,7 @@ const Articles = () => {
             return formattedDate;
         }
 
+        //För det är inte gjort innan det lades till i DB
         function remove_img_p(text) {
             text = text.replaceAll("<p>", "");
             text = text.replaceAll("</p>", "");
