@@ -259,3 +259,8 @@ footer::before {
     text-decoration: none !important;
     color: black !important;
 }
+
+.sortera_ng {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
