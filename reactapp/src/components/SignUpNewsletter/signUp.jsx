@@ -16,8 +16,7 @@ const SignUp = () => {
     };
 
     const handleEmailSubmit = () => {
-        // Simulate email registration
-        
+        // Post email registration to DB
         const token = localStorage.getItem("token")
         fetch(`/home/SubmitEmail?email=${email}`,
             {
@@ -25,9 +24,11 @@ const SignUp = () => {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
         <p>Thank you for signing up!</p>
-
+        //closePopup();
+        const ref = setTimeout(() => {
             closePopup();
-
+            clearTimeout(ref);
+        }, 40000);
     };
 
     return (
@@ -37,8 +38,7 @@ const SignUp = () => {
                 Signup!
             </button>
             <PopUp isOpen={isPopupOpen} onClose={closePopup} onSubmit={handleEmailSubmit} email={email} setEmail={setEmail} />
-
-            </div>
+        </div>
     );
 };
 
