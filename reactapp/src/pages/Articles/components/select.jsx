@@ -13,7 +13,7 @@ const SelectsComponent = () => {
     return (
         <div style={{ marginBottom: '15px' }}>
             <label htmlFor="sorting">Sortera:</label>
-            <select id="sorting" name="sorting" value={sorting} onChange={handleSortingChange}>
+            <select className="sortera_ng" id="sorting" name="sorting" value={sorting} onChange={handleSortingChange}>
                 <option value="newest">Nya</option>
                 <option value="oldest">Äldre</option>
             </select>

@@ -157,6 +157,7 @@ footer::before {
     .footer-nav-headline:hover {
         color: var(--secondary-color);
         font-weight: bold;
+        cursor: pointer;
     }
 
         .footer-nav-headline:hover:after {
@@ -258,4 +259,9 @@ footer::before {
 .no-underline:hover {
     text-decoration: none !important;
     color: black !important;
+}
+
+.sortera_ng {
+    background: var(--primary-color);
+    color: var(--secondary-color);
 }
