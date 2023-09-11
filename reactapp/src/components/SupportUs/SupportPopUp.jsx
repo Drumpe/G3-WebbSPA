@@ -35,6 +35,9 @@ function getAnimationSettings(originXA, originXB) {
 const SupportPopUp = ({ isOpen, onClose }) => {
 
     const popupClassName = isOpen ? 'popup-overlay show' : 'popup-overlay';
+    const [name, setname] = useState('');
+    const [email, setemail] = useState('');
+    const [supporttext, setsupporttext] = useState('');
 
     const refAnimationInstance = useRef(null);
     const [intervalId, setIntervalId] = useState();
@@ -55,6 +58,17 @@ const SupportPopUp = ({ isOpen, onClose }) => {
             refAnimationInstance.current(getAnimationSettings(0.7, 0.9));
         }
     }, []);
+
+    const handleSubmit = async () => {
+
+        const token = localStorage.getItem("token")
+        fetch(`/home/SubmitSupport?name=${name}&email=${email}&supporttext=${supporttext}`,
+            {
+                method: "POST",
+                headers: { 'Authorization': `Bearer ${token}` },
+            });
+        startAnimation()
+    }   
 
     const startAnimation = useCallback(() => {
         setIsSend(true)
@@ -83,27 +97,38 @@ const SupportPopUp = ({ isOpen, onClose }) => {
                 <div className="support_content">
 
                     <div className="supportheader">
-                        <h1 className="support_h1">Thanks</h1>
+                        <h1 className="support_h1">Thanks for your support</h1>
                         <p className="support_logo">✅</p>
-                        <h2 className="support_h2">Fill in your information</h2>
                     </div>
                     {!isSend &&
                         <div className="supportbody">
+                            <h2 className="support_h2">Fill in your information</h2>
                             <form className="support_form">
                                 <label className="support_label" htmlFor="name">Name:</label>
-                                <input className="support_textarea" type="text" id="name" name="name" required />
+                                <input className="support_textarea"
+                                    type="text"
+                                    value={name}
+                                    onChange={(e) => setname(e.target.value)}
+                                    required />
                                 <br /><br />
                                 <label className="support_label" htmlFor="email">Email:</label>
-                                <input className="support_textarea" type="email" id="email" name="email" required />
+                                <input className="support_textarea"
+                                    type="email"
+                                    value={email}
+                                    onChange={(e) => setemail(e.target.value)}
+                                    required />
                                 <br /><br />
                                 <label className="support_label" htmlFor="message">Message for Support:</label>
-                                <textarea className="support_textarea" id="message" name="message" required></textarea>
+                                <textarea className="support_textarea"
+                                    value={supporttext}
+                                    onChange={(e) => setsupporttext(e.target.value)}
+                                    required></textarea>
                             </form>
                         </div>}
                     <br /><br /><br />
 
                     <div className="supportfooter">
-                        <button className="btn-footer bf-1" onClick={startAnimation}>Send</button>
+                        <button className="btn-footer bf-1" onClick={handleSubmit}>Send</button>
                         <button type="reset" className="btn-footer bf-1" onClick={stopAnimation}>Reset</button>
                         <button className="btn-footer bf-1" onClick={onBack}> Back Home </button>
                     </div>
