@@ -204,11 +204,9 @@ Vi har delat upp mainPage i tre olika kolumner som ni ser nedan. Vänster är f�
 Det är en placeholder som gör att vi kan sätta in reklam osv.
 
   
-import Weather from './Weather/Weather';
-
-import Articles from './Articles/Articles';
-
-import RightColumn from './RightColumn';
+    import Weather from './Weather/Weather';
+    import Articles from './Articles/Articles';
+    import RightColumn from './RightColumn';
 
     <div className="container-fluid">
       <div className="row">
