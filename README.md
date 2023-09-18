@@ -64,69 +64,44 @@ CREATE DATABASE newsextractdb;
 
 Skapande av tables:
 
-CREATE TABLE news (
+    CREATE TABLE `news` (
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
+    `title` VARCHAR(255),
+    `summary` TEXT,
+    `link` VARCHAR(255),
+    `published` DATETIME,
+    `topic` TEXT
+    );
 
-id INT PRIMARY KEY AUTO_INCREMENT,
+    CREATE TABLE `support` (
+    `support_id` int NOT NULL AUTO_INCREMENT,
+    `support_name` varchar(45) NOT NULL,
+    `support_email` varchar(60) NOT NULL,
+    `support_comment` varchar(240) NOT NULL,
+    PRIMARY KEY (`support_id`)
+    );
 
-title VARCHAR(255),
-
-summary TEXT,
-
-link VARCHAR(255),
-
-published DATETIME,
-
-topic TEXT
-
-);
-
-CREATE TABLE `support` (
-
-`support_id` int NOT NULL AUTO_INCREMENT,
-
-`support_name` varchar(45) NOT NULL,
-
-`support_email` varchar(60) NOT NULL,
-
-`support_comment` varchar(240) NOT NULL,
-
-PRIMARY KEY (`support_id`)
-
-);
-
-CREATE TABLE `newsletter` (
-
-`NewsLetter_id` int NOT NULL AUTO_INCREMENT,
-
-`NewsLetter_email` varchar(80) NOT NULL,
-
-PRIMARY KEY (`NewsLetter_id`)
-
-);
+    CREATE TABLE `newsletter` (
+    `NewsLetter_id` int NOT NULL AUTO_INCREMENT,
+    `NewsLetter_email` varchar(80) NOT NULL,
+    PRIMARY KEY (`NewsLetter_id`)
+    );
 
 Ta bort artiklar som inte har en titel, summary eller topic:
 
-DELETE n1
-
-FROM news n1
-
-WHERE n1.summary = ""
-
-OR n1.title = ""
-
-OR n1.topic = "";
+    DELETE n1
+    FROM news n1
+    WHERE n1.summary = ""
+    OR n1.title = ""
+    OR n1.topic = "";
 
 Tar bort duplicerade artiklar:
 
-DELETE n1
-
-FROM news n1
-
-JOIN news n2
-
-ON n1.title = n2.title AND n1.link = n2.link
-
-WHERE n1.id < n2.id;
+    DELETE n1
+    FROM news n1
+    JOIN news n2
+    ON n1.title = n2.title AND n1.link = n2.link
+    WHERE n1.id < n2.id;
 
 # API Servern (webapi)
 
@@ -146,17 +121,18 @@ Index som är en HttpGet-funktion som returnerar en lista med artiklar utifrån 
 
 Parametrarna skickas enligt följande mönster:
 
-/home?topic=idrott&sortBy=oldest&searchFor=zlatan - Detta kommer att resultera i en lista där titel eller summary innehåller strängen zlatan och topic är idrott, den äldsta artikeln kommer först.
+`/home?topic=idrott&sortBy=oldest&searchFor=zlatan` - Detta kommer att resultera i en lista där titel eller summary innehåller strängen zlatan och topic är idrott, den äldsta artikeln kommer först.
 
-/home?limit=25&start=26 - Detta kommer att resultera i en lista med artiklarna 26-51 från databasen.
+`/home?limit=25&start=26` - Detta kommer att resultera i en lista med artiklarna 26-51 från databasen.
+
 
 ### SubmitEmail
 
-Denna HTTPPost-funktion lagrar en mailadress i databastabellen newsletter. Denna funktion nås enligt följande mall: /home/SubmitEmail?email=kalle@mail.se, glöm inte att det måste vara en POST. Email får inte vara en tom sträng och måste innehålla ‘@’.
+Denna HTTPPost-funktion lagrar en mailadress i databastabellen newsletter. Denna funktion nås enligt följande mall: `/home/SubmitEmail?email=kalle@mail.se`, glöm inte att det måste vara en POST. Email får inte vara en tom sträng och måste innehålla ‘@’.
 
 ### SubmitSupport
 
-Denna HTTPPost-funktion lagrar namn, mailadress och text i databastabellen support. Denna funktion nås enligt följande mall: /home/SubmitSupport?name=Kalle&email=kalle@mail.se&supporttext=Lore ipsum, glöm inte att det måste vara en POST. Ingen parameter får lämnas tom och email måste innehålla ‘@’.
+Denna HTTPPost-funktion lagrar namn, mailadress och text i databastabellen support. Denna funktion nås enligt följande mall: `/home/SubmitSupport?name=Kalle&email=kalle@mail.se&supporttext=Lore ipsum`, glöm inte att det måste vara en POST. Ingen parameter får lämnas tom och email måste innehålla ‘@’.
 
 ## AuthenticateController
 
