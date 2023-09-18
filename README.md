@@ -330,26 +330,19 @@ När
 
 # React
 
-När vi först började visste vi inte hur vi skulle göra ordentlig map-  
-hantering. Allting låg splittrat och vi hade minst fem css filer som
-
-inte hade några funktioner eller att koderna skrev över varandra.
+När vi först började visste vi inte hur vi skulle göra ordentlig map-hantering. Allting låg splittrat och vi hade minst fem css filer som inte hade några funktioner eller att koderna skrev över varandra.
 
 Det blev lättare till slut när vi bara hade några css-filer. Då kunde vi undersöka felen utan att det skulle ta för mycket tid att undersöka.
 
-Vi tror att de hade varit bättre att göra en plan om hur projektmappen
+Vi tror att de hade varit bättre att göra en plan om hur projektmappen skulle se ut från början och utgå från det istället för att börja koda och testa sig fram.
 
-skulle se ut från början och utgå från det istället för att börja koda och testa sig fram.
+**Atthaphon** har arbetat med Navbar, Login, Logout, Register, RightColumn.
 
-Atthaphon har arbetat med Navbar, Login, Logout, Register,
+**Ola** har varit och petat i det mesta, men har i huvudsak fokuserat på HomeControllern, artiklarna, databaserna och Dark Theme.
 
-RightColumn.  
-  
-  
-Ola har varit och petat i det mesta, men har i huvudsak fokuserat på HomeControllern, artiklarna, databaserna och Dark Theme.
+**Ahmed** har arbetat det mesta med Support US knappen och deras komponenter och funktioner.
 
-  
-Ahmed har arbetat det mesta med Support US knappen och deras komponenter och funktioner.Jimmie har hållit sig mest till väderrutan genom projektets gång. Även fixat den ursprungliga grid layouten för bodyn till vår sida samt lite som funktioner som att kunna logga in eller genom att söka på olika orter eller städer i vädret rutan med hjälp av enter.
+**Jimmie** har hållit sig mest till väderrutan genom projektets gång. Även fixat den ursprungliga grid layouten för bodyn till vår sida samt lite som funktioner som att kunna logga in eller genom att söka på olika orter eller städer i vädret rutan med hjälp av enter.
 
   
 
