@@ -24,27 +24,27 @@ På Jira delade vi upp uppgifter, vilket kan ses i länken nedan.
 
 ### Npm-paket:
 
-npm i bootstrap@5.3.1 (inte säker på att det behövs)
+*npm i bootstrap@5.3.1* (inte säker på att det behövs)
 
-npm i react-canvas-confetti (För supportUs confetti)
+*npm i react-canvas-confetti* (För supportUs confetti)
 
 ### Tools:
 
-SQLite/SQL Server Compact toolbox (för kontroll av sqlite databasen)
+*SQLite/SQL Server Compact toolbox* (för kontroll av sqlite databasen)
 
 ### NuGets:
 
-Microsoft.AspNetCore.ApiAuthorization.IdentityServer
-
-Microsoft.EntityFrameworkCore.Sqlite
-
-Microsoft.EntityFrameworkCore.SqlServer
-
-Microsoft.EntityFrameworkCore.Tools
-
-MySqlConnector
-
-MySql.Data
+>*Microsoft.AspNetCore.ApiAuthorization.IdentityServer*
+>
+>*Microsoft.EntityFrameworkCore.Sqlite*
+>
+>*Microsoft.EntityFrameworkCore.SqlServer*
+>
+>*Microsoft.EntityFrameworkCore.Tools*
+>
+>*MySqlConnector*
+>
+>*MySql.Data*
 
 # Databasen
 
