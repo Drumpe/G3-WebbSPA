@@ -192,7 +192,7 @@ För att göra detta möjligt använder vi oss av state som gör det möjligt at
 
 ## Artiklar
 
-Visar efterfrågade artiklar i kort. I korten finns titel, summary, publiceringsdatum och vilka topic artikeln är försedd med. Vid klick på korten öppnas en ny flik och artikeln visas på den ursprungliga sajten. Summary är rensad från img-taggar, <p> och </p>.
+Visar efterfrågade artiklar i kort. I korten finns titel, summary, publiceringsdatum och vilka topic artikeln är försedd med. Vid klick på korten öppnas en ny flik och artikeln visas på den ursprungliga sajten. Summary är rensad från img-taggar, `<p>` och `</p>`.
 
 ## Nya äldre
 
