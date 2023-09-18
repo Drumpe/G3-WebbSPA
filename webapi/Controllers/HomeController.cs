@@ -1,14 +1,7 @@
 ﻿using Duende.IdentityServer.Extensions;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Logging;
 using MySqlConnector;
-using Org.BouncyCastle.Asn1.X509;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using webapi.Models;
 
 namespace webapi.Controllers
@@ -21,7 +14,7 @@ namespace webapi.Controllers
 		private readonly ILogger<HomeController> _logger;
 		private IList<Article> _articles;
 
-		// Connection string for MySQL database - global in HomeController used in 3 functions
+		// Connection string for MySQL database - global in HomeController used in 3 functions  -  Kanske inte så bra att lagra på Git.
 		//string connStr = "server=localhost;user=root;database=newsextractdb;port=3306;password=sommar"; 
 		//string connStr = "server=db-g3.cj6tuuscsywt.us-east-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=password"; //Bobbys AWS DB
 		string connStr = "server=aws-newsfeeddb.ci1dhftr505s.eu-north-1.rds.amazonaws.com;user=admin;database=newsextractdb;port=3306;password=N.LLJMFw52n#i}d"; //Olas AWS DB
